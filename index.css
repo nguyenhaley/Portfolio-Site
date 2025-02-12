@@ -1,0 +1,109 @@
+body {
+    color: #BB86FC;
+    overflow: hidden;
+    font-family: "Montserrat", sans-serif;
+    background-color: #121212;
+}
+
+/* styles my navbar on top*/
+/*nav {
+    top: 0;
+    width: 100%;
+    height: 60px;
+}*/
+
+#navbar-elements {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    list-style-type: none;
+}
+
+#navbar-elements a {
+    text-decoration: none;
+    color:#BB86FC;
+}
+
+#navbar-elements a:hover {
+    color: white;
+}
+
+main.section {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    gap: 6%; /* gap between text and image */
+    justify-content: center; /* puts content in the middle of page */
+}
+
+img {
+    border-radius: 125px;
+    margin-left: 2rem;
+}
+
+h1 {
+    font-size: 5rem;
+    margin: 0;
+}
+
+h2 {
+    color: white !important;
+}
+
+.main-text {
+    display: flex;
+    flex-direction: column; 
+    
+}
+
+/* styles my short description (below heading) */
+p {
+    font-size: 1.25rem;
+}
+
+/* when users scroll down, they'll scroll between content */
+#scroll-container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 90vh;
+    margin-top: -4%;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    height: 100vh;
+}
+
+footer {
+    overflow: auto;
+}
+
+/* will style my contact information page */
+#contact-info {
+    font-style: normal;
+    color: #BB86FC;
+    text-align: center;
+}
+
+address a {
+    color: #BB86FC;
+    text-decoration: none;
+}
+
+address a:hover{
+    color: white;
+}
+
+#quick-contact a {
+    color: #BB86FC;
+    text-decoration: none;
+}
+
+#quick-contact a:hover {
+    color: white;
+}  
