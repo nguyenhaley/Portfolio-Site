@@ -35,9 +35,31 @@ h1 {
     margin-bottom: 0;
 }
 
+h3 {
+    padding-left: 2rem;
+    text-decoration: underline;
+}
+
 p {
     margin-top: 0.5em;
 }
 
+.current-classes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+class-card {
+    background-color: #3d3d3d;
+    height: 15vh;
+    width: 15vw;
+    border-radius: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
 
