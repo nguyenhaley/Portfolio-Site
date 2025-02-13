@@ -12,19 +12,21 @@ body {
     height: 60px;
 }*/
 
-#navbar-elements {
+.navbar-elements {
     display: flex;
     justify-content: space-around;
-    padding: 0;
+    background-color: #3d3d3d;
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem;
     list-style-type: none;
 }
-
-#navbar-elements a {
+.navbar-elements a {
     text-decoration: none;
-    color:#BB86FC;
+    color:#9f54fb;
 }
 
-#navbar-elements a:hover {
+.navbar-elements a:hover {
     color: white;
 }
 
@@ -59,6 +61,11 @@ h2 {
 /* styles my short description (below heading) */
 p {
     font-size: 1.25rem;
+    line-height: 20px;
+}
+
+span {
+    color: white;
 }
 
 /* when users scroll down, they'll scroll between content */

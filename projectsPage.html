@@ -3,30 +3,21 @@
 <head>
     <meta name="description" content="Projects page for portfolio">
     <title> Projects Page </title>
-
-    <style>
-        .hoverTitle, .popup, nav {
-            border-color: black;
-            border-style: solid;
-        }
-    </style>
-
+    <link rel="stylesheet" href="projectsPage.css">
 </head>
 <body>
 
     <header>
         <nav>
-            <ul>
+            <ul class="navbar-elements">
                 <li><a href="index.html">Homepage</a></li>
                 <li><a href="resumePage.html">Resume</a></li>
                 <li><a href="experiencePage.html">Experience</a></li>
-                <li><a href="aboutMePage.html">About Me</a></li>
-                <li><a href="hobbiesPage.html">Hobbies/Interests</a></li>
                 <li><a href="projectsPage.html">Projects</a></li>
                 <li><a href="lifePage.html">Peek into my life!</a></li>
               </ul>
         </nav>
-
+        <!--
         <section class="keyboardHoverableInfo">
             <div class="hoverTitle"> <b> Keyboard shortcuts</b> </div>
             <div class="popup">
@@ -53,6 +44,7 @@
                 </ul>
             </div>
         </section>
+        -->
 
     </header>
 
@@ -61,12 +53,16 @@
     <section class="allProjects">
 
         <div class="projectCard">
-            <img src="../assets/projectSC.png" alt="Project sample" width="400" height="200">
-            <div class="container">
             <h4><b>Web Developer Journal</b></h4>
-            <p>[description]</p>
+            <img src="../assets/projectSC.png" alt="Project sample" width="300" height="180">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin interdum ullamcorper 
+                turpis sed condimentum. Pellentesque laoreet erat ex, ut rhoncus dolor volutpat sed. 
+                Vivamus vitae nulla eget orci luctus ornare eu tempor magna. Etiam enim risus, 
+                facilisis at neque scelerisque, gravida molestie mauris. Aenean euismod nec lorem 
+                non blandit. 
+            </p>
             <button>Github Link</button>
-            </div>
         </div>
         
     </section>

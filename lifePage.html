@@ -3,41 +3,21 @@
 <head>
     <meta name="description" content="Peek into my life page for portfolio">
     <title> Life Page </title>
-
-    <style>
-        .hoverTitle, .popup, nav {
-            border-color: black;
-            border-style: solid;
-        }
-
-        class-card {
-            background-color: lightgray;
-            border-color: black;
-            border-radius: 8px;
-        }
-
-        class-card .courseName {
-            font-weight: bold;
-        }
-
-    </style>
-
+    <link rel="stylesheet" href="lifePage.css">
 </head>
 <body>
 
     <header>
         <nav>
-            <ul>
+            <ul class="navbar-elements">
                 <li><a href="index.html">Homepage</a></li>
                 <li><a href="resumePage.html">Resume</a></li>
                 <li><a href="experiencePage.html">Experience</a></li>
-                <li><a href="aboutMePage.html">About Me</a></li>
-                <li><a href="hobbiesPage.html">Hobbies/Interests</a></li>
                 <li><a href="projectsPage.html">Projects</a></li>
                 <li><a href="lifePage.html">Peek into my life!</a></li>
               </ul>
         </nav>
-
+        <!-- 
         <section class="keyboardHoverableInfo">
             <div class="hoverTitle"> <b> Keyboard shortcuts</b> </div>
             <div class="popup">
@@ -64,15 +44,16 @@
                 </ul>
             </div>
         </section>
+        -->
 
     </header>
 
     <hgroup>
-        <h1> Take a peek into my current life!</h1>
+        <h1>Take a peek into my current life!</h1>
         <p>Last updated: February 2, 2025</p>
     </hgroup>
 
-    <h2>Courses I am currently taking:</h2>
+    <h3>Courses I am currently taking:</h3>
     <class-card>
         <div class="courseName"> CSE134B: <span> Web Client Languages</span></div>
         <div class="courseDetails">[short description]</div>
@@ -88,18 +69,12 @@
         <div class="courseDetails">[short description]</div>
     </class-card>
 
-    <class-card>
-        <div class="courseName"> COGS13: <span> TBD</span></div>
-        <div class="courseDetails">[short description]</div>
-    </class-card>
-
-
     <section class="currentProjects">
-        <h1>Project(s) that I am currently working on: </h1>
+        <h2>Project(s) that I am currently working on: </h2>
     </section>
 
     <section class="currentReads">
-        <h1>Book that I am currently reading: </h1>
+        <h2>Book that I am currently reading: </h2>
 
         <div class="bookDetails">
             <h3>Mistborn <span>by Brandon Sanderson</span> </h3>
@@ -118,7 +93,7 @@
     </section>
 
     <section class="favSong">
-        <h1>Song that I have on Repeat:</h1>
+        <h2>Song that I have on Repeat:</h2>
         <figure>
             <figcaption>Sneak peek of my current favorite song!</figcaption>
             <iframe 

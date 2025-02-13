@@ -3,30 +3,21 @@
 <head>
     <meta name="description" content="Experience page for portfolio">
     <title> Experience Page </title>
-
-    <style>
-        .hoverTitle, .popup, nav, .timeline-content {
-            border-color: black;
-            border-style: solid;
-        }
-    </style>
-
+    <link rel="stylesheet" href="experiencePage.css">
 </head>
 <body>
 
     <header>
         <nav>
-            <ul>
+            <ul class="navbar-elements">
                 <li><a href="index.html">Homepage</a></li>
                 <li><a href="resumePage.html">Resume</a></li>
                 <li><a href="experiencePage.html">Experience</a></li>
-                <li><a href="aboutMePage.html">About Me</a></li>
-                <li><a href="hobbiesPage.html">Hobbies/Interests</a></li>
                 <li><a href="projectsPage.html">Projects</a></li>
                 <li><a href="lifePage.html">Peek into my life!</a></li>
               </ul>
         </nav>
-
+        <!--
         <section class="keyboardHoverableInfo">
             <div class="hoverTitle"> <b> Keyboard shortcuts</b> </div>
             <div class="popup">
@@ -53,15 +44,15 @@
                 </ul>
             </div>
         </section>
-
+        -->
     </header>
 
+    <!--
     <div class="timeline-wrapper">
         <div class="timeline">
           <ul>
-
             <li>
-                <div class="timeline-content">
+                <div class="content">
                     <h1>ACM (Association for Computing Machinery)</h1>
                     <p>Date: September/2023 - September/2024</p>
                     <p> Teamwork and industry experience - Active member </p>
@@ -80,7 +71,7 @@
             </li>
 
             <li>
-                <div class="timeline-content">
+                <div class="content">
                     <h1>UCSD Recreation Events Assistant</h1>
                     <p>Date: September/2023 - Present </p>
                     <p> Communication and teamwork experience - Employee </p>
@@ -90,10 +81,45 @@
                     </ul>
                 </div>
             </li>
-
           </ul>
       </div>
     </div>
+    -->
+
+    <div class="timeline">
+
+        <div class="container left">
+            <div class="content">
+                <h4>September/2023 - September/2024</h4>
+                <h2>ACM (Association for Computing Machinery)</h2>
+                <p> Teamwork and industry experience - Active member </p>
+                <ul>
+                    <li>Participated in meetings and workshops as an active member</li>
+                    <li>Completed a project with 3 other members</li>
+                    <li>Reconstructed a calorie-counting app
+                        <ul>
+                            <li>Assisted in the application's front-end development</li>
+                            <li>Utilized HTML, CSS, JS, React</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container right">
+            <div class="content">
+                <h4>September/2023 - Present</h4>
+                <h2>UCSD Recreation Events Assistant</h2>
+                <p> Communication and teamwork experience - Employee </p>
+                <ul>
+                    <li>Assisted in setting up for school events and sports games alongside team members</li>
+                    <li>Helped foster a safe environment for students to enjoy and participate in activities </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
 
 </body>
 </html>

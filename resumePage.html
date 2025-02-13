@@ -3,30 +3,23 @@
 <head>
     <meta name="description" content="Resume page for portfolio">
     <title> Resume Page </title>
-
-    <style>
-        .hoverTitle, .popup, nav {
-            border-color: black;
-            border-style: solid;
-        }
-    </style>
-
+    <link rel="stylesheet" href="resumePage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <nav>
-            <ul>
+            <ul class="navbar-elements">
                 <li><a href="index.html">Homepage</a></li>
                 <li><a href="resumePage.html">Resume</a></li>
                 <li><a href="experiencePage.html">Experience</a></li>
-                <li><a href="aboutMePage.html">About Me</a></li>
-                <li><a href="hobbiesPage.html">Hobbies/Interests</a></li>
                 <li><a href="projectsPage.html">Projects</a></li>
                 <li><a href="lifePage.html">Peek into my life!</a></li>
-              </ul>
+            </ul>
         </nav>
 
+        <!-- 
         <section class="keyboardHoverableInfo">
             <div class="hoverTitle"> <b> Keyboard shortcuts</b> </div>
             <div class="popup">
@@ -53,13 +46,18 @@
                 </ul>
             </div>
         </section>
+        -->
 
     </header>
 
-    <h1> Resume </h1>
-    <iframe class="resume" src= "../assets/Resume.pdf"> </iframe>
 
-    <a href="../assets/Resume.pdf" download class="resumeDownload"> Download Resume </a>
+        <h1> Resume </h1>
+        <div id="resume-content">
+            <iframe id="resume" src= "../assets/Resume.pdf" style="width:60vw; height: 75vh;"> </iframe>
+            <a href="../assets/Resume.pdf" download id="resumeDownload"> Download Resume </a>
+        </div>
+
+    
 
 </body>
 </html>

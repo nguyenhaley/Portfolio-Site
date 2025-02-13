@@ -1,0 +1,84 @@
+body {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    background-color: #121212;
+    padding: 0;
+    border: 0;
+}
+
+.navbar-elements {
+    display: flex;
+    justify-content: space-around;
+    background-color: #3d3d3d;
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+    list-style-type: none;
+}
+
+.navbar-elements a {
+    text-decoration: none;
+    color:#9f54fb;;
+}
+
+.navbar-elements a:hover {
+    color: white;
+}
+
+/* styles "Projects" title*/
+h1 {
+    color: #BB86FC;
+    font-size: 2rem;
+    padding-left: 2rem;
+
+}
+
+/* styles all card titles */
+h4 {
+    color: white;
+    font-size: 1.5rem;
+}
+
+img {
+    border-radius: 2rem;
+}
+
+p {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+button {
+    display: inline-block;
+    background-color: #BB86FC;
+    font-size: 1rem;
+    padding: 1rem;
+    color:white;
+    border-radius: 1em;
+    margin-bottom: 1rem;
+}
+
+button:hover {
+    background-color: #9f54fb;
+}
+
+/* styles all project cards so they are displayed nicely */
+.allProjects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/* styling for inside of each project card */
+.projectCard {
+    background-color: #3d3d3d;
+    height: 70vh;
+    width: 30vw;
+    border-radius: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
