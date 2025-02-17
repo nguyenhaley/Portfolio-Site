@@ -6,6 +6,31 @@ body {
     border: 0;
 }
 
+/* styles my navbar on top */
+#menu { /* Hide the checkbox */
+    display: none;
+}
+
+/* Style the hamburger menu */
+label[for="menu"] {
+    display: none; /* Hidden on larger screens */
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 3dvh;
+    margin-left: 2dvh;
+    width: 40px;
+    height: 30px;
+}
+
+label[for="menu"] span {
+    display: block;
+    border-radius: 2rem;
+    height: 0.25rem;
+    width: 100%;
+    background: white;
+    transition: 0.3s;
+}
+
 .navbar-elements {
     display: flex;
     justify-content: space-around;

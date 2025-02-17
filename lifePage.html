@@ -9,13 +9,20 @@
 
     <header>
         <nav>
+            <!-- hamburger menu symbols -->
+            <label for="menu" >
+                <span> </span>
+                <span> </span>
+                <span> </span>
+            </label>
+            <input id="menu" type="checkbox" >
             <ul class="navbar-elements">
                 <li><a href="index.html">Homepage</a></li>
                 <li><a href="resumePage.html">Resume</a></li>
                 <li><a href="experiencePage.html">Experience</a></li>
                 <li><a href="projectsPage.html">Projects</a></li>
                 <li><a href="lifePage.html">Peek into my life!</a></li>
-              </ul>
+            </ul>
         </nav>
         <!-- 
         <section class="keyboardHoverableInfo">
@@ -53,64 +60,71 @@
         <p>Last updated: February 2, 2025</p>
     </hgroup>
 
-    <h3>Courses I am currently taking:</h3>
-    <section class="current-classes">
-        <class-card>
-            <div class="courseName"> CSE134B: <span> Web Client Languages</span></div>
-            <div class="courseDetails">[short description]</div>
-        </class-card>
+    <div id="scroll-container">
+        <div class="section"> 
+            <h3>Courses I am currently taking:</h3>
+            <section id="current-classes">
+                <class-card>
+                    <div class="courseName"> CSE134B: <span> Web Client Languages</span></div>
+                    <div class="courseDetails">[short description]</div>
+                </class-card>
 
-        <class-card>
-            <div class="courseName"> COGS101B: <span> TBD </span></div>
-            <div class="courseDetails">[short description]</div>
-        </class-card>
+                <class-card>
+                    <div class="courseName"> COGS101B: <span> TBD </span></div>
+                    <div class="courseDetails">[short description]</div>
+                </class-card>
 
-        <class-card>
-            <div class="courseName"> COGS100: <span> TBD </span></div>
-            <div class="courseDetails">[short description]</div>
-        </class-card>
-
-    </section>
-
-    <h3>Book that I am currently reading: </h3>
-    <section class="currentReads">
-        <div class="bookDetails">
-            <h4>Mistborn <span>by Brandon Sanderson</span> </h4>
-            <details> 
-                <summary>Click for more details about the book</summary>
-                [short description]
-            </details>
+                <class-card>
+                    <div class="courseName"> COGS100: <span> TBD </span></div>
+                    <div class="courseDetails">[short description]</div>
+                </class-card>
+            </section>
         </div>
 
-        <aside>
-            <a href="https://www.goodreads.com/user/show/147553005-haley-nguyen">
-                Check out my Goodreads!
-            </a>
-        </aside>
+        <div class="section"> 
+            <h3>Book that I am currently reading: </h3>
+            <section id="currentReads">
+                <div class="bookDetails">
+                    <h4>Mistborn <span>by Brandon Sanderson</span> </h4>
+                    <!-- Image was taken from amazon website -->
+                    <img src="https://m.media-amazon.com/images/I/91U6rc7u0yL.jpg" alt="mistborn book cover" height="400" width="300">
+                    <details> 
+                        <summary>Click for more details about the book</summary>
+                        [short description]
+                    </details>
+                </div>
 
-    </section>
+                <aside>
+                    <a href="https://www.goodreads.com/user/show/147553005-haley-nguyen">
+                        Check out my Goodreads!
+                    </a>
+                </aside>
+            </section>
+        </div>
 
-    <section class="favSong">
-        <h3>Song that I have on Repeat:</h3>
-        <figure>
-            <figcaption>Sneak peek of my current favorite song!</figcaption>
-            <iframe 
-                src="https://open.spotify.com/embed/track/221qmpQeBNV87sUjQeUTVH?utm_source=generator" >
-            </iframe>
-        </figure>
+        <div class="section"> 
+            <section id="favSong">
+                <h3>Song that I have on Repeat:</h3>
+                <figure>
+                    <figcaption>Sneak peek of my current favorite song!</figcaption>
+                    <iframe 
+                        src="https://open.spotify.com/embed/track/221qmpQeBNV87sUjQeUTVH?utm_source=generator" >
+                    </iframe>
+                </figure>
 
-        <aside>
-            <h3>Top 5 favorte artists: </h3>
-            <ol>
-                <li>Zedd</li>
-                <li>Lady Gaga</li>
-                <li>Metro Boomin</li>
-                <li>Bruno Mars</li>
-                <li>Crankdat</li>
-            </ol>
-        </aside>
+                <aside>
+                    <h3>Top 5 favorte artists: </h3>
+                    <ol>
+                        <li>Zedd</li>
+                        <li>Lady Gaga</li>
+                        <li>Metro Boomin</li>
+                        <li>Bruno Mars</li>
+                        <li>Crankdat</li>
+                    </ol>
+                </aside>
+            </section>
+        </div>
 
-    </section>
-
+    </div>  
 </body>
 </html>

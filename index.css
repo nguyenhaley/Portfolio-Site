@@ -5,16 +5,34 @@ body {
     background-color: #121212;
 }
 
-/* styles my navbar on top*/
-/*nav {
-    top: 0;
+/* styles my navbar on top */
+#menu { /* Hide the checkbox */
+    display: none;
+}
+
+/* Style the hamburger menu */
+label[for="menu"] {
+    display: none; /* Hidden on larger screens */
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 3dvh;
+    margin-left: 2dvh;
+    width: 40px;
+    height: 30px;
+}
+
+label[for="menu"] span {
+    display: block;
+    border-radius: 2rem;
+    height: 0.25rem;
     width: 100%;
-    height: 60px;
-}*/
+    background: white;
+    transition: 0.3s;
+}
 
 .navbar-elements {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     background-color: #3d3d3d;
     border-radius: 1rem;
     margin: 1rem;
@@ -24,13 +42,15 @@ body {
 .navbar-elements a {
     text-decoration: none;
     color:#9f54fb;
+    font-size: 1.5rem;
 }
 
 .navbar-elements a:hover {
     color: white;
 }
 
-main.section {
+/* styling for everything outside of navbar */
+#main-content {
     display: flex;
     flex-direction: row;
     align-items: center; 
@@ -49,23 +69,29 @@ h1 {
 }
 
 h2 {
-    color: white !important;
+    font-size: 4rem;
+    margin-bottom: 0;
 }
 
-.main-text {
+#contact-info h2 {
+    margin-top: 0;
+}
+
+#main-text {
     display: flex;
-    flex-direction: column; 
-    
+    flex-direction: column;  
 }
 
 /* styles my short description (below heading) */
 p {
-    font-size: 1.25rem;
-    line-height: 20px;
+    color: white;
+    font-size: 2rem;
+    max-width: 75%;
+
 }
 
 span {
-    color: white;
+    color: #BB86FC;
 }
 
 /* when users scroll down, they'll scroll between content */
@@ -83,14 +109,10 @@ span {
     align-items: center;
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    height: 100vh;
+    height: 95dvh;
 }
 
-footer {
-    overflow: auto;
-}
-
-/* will style my contact information page */
+/* styles my contact information page */
 #contact-info {
     font-style: normal;
     color: #BB86FC;
@@ -98,19 +120,77 @@ footer {
 }
 
 address a {
-    color: #BB86FC;
+    color: white;
     text-decoration: none;
+    font-size: 1.25rem;
 }
 
 address a:hover{
-    color: white;
-}
-
-#quick-contact a {
     color: #BB86FC;
-    text-decoration: none;
 }
 
-#quick-contact a:hover {
+#quickContact a {
     color: white;
+    text-decoration: none;
+    font-size: 1.25rem;
+}
+
+#quickContact a:hover {
+    color: #BB86FC;
 }  
+
+footer img {
+    width: 3dvw;
+    height: 5dvh;
+}
+
+/* styling for phones */
+@media (max-width: 600px) {
+    .navbar-elements {
+        display: none; /* Hide navbar */
+        flex-direction: column;
+        position: absolute; /* won't move anything around it */
+        background-color: #3d3d3d;
+        width: 50dvw;
+        height: 50dvh;
+        border-radius: 10px;
+        font-size: 1.5rem;
+    }
+
+    .navbar-elements a {
+        color: white;
+    }
+
+    /* Show the hamburger icon */
+    label[for="menu"] {
+        display: flex;
+    }
+
+    /* Show menu when hamburger is clicked on */
+    #menu:checked ~ .navbar-elements {
+        display: flex;
+    }
+
+    #main-content {
+        flex-direction: column;
+    }
+
+    img {
+        width: 200px;
+        height: 300px;
+        margin-left: 0;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    footer img {
+        width: 8.5dvw;
+        height: 5dvh;
+    }
+}
