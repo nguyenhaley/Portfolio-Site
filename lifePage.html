@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta name="description" content="Peek into my life page for portfolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Life Page </title>
     <link rel="stylesheet" href="lifePage.css">
 </head>
@@ -62,7 +63,7 @@
 
     <div id="scroll-container">
         <div class="section"> 
-            <h3>Courses I am currently taking:</h3>
+            <h3 id="courses">Courses I am currently taking:</h3>
             <section id="current-classes">
                 <class-card>
                     <div class="courseName"> CSE134B: <span> Web Client Languages</span></div>
@@ -84,44 +85,25 @@
         <div class="section"> 
             <h3>Book that I am currently reading: </h3>
             <section id="currentReads">
-                <div class="bookDetails">
-                    <h4>Mistborn <span>by Brandon Sanderson</span> </h4>
-                    <!-- Image was taken from amazon website -->
-                    <img src="https://m.media-amazon.com/images/I/91U6rc7u0yL.jpg" alt="mistborn book cover" height="400" width="300">
-                    <details> 
-                        <summary>Click for more details about the book</summary>
-                        [short description]
-                    </details>
+                <div id="bookDetails">
+                    <div id="left-side">
+                        <h4>Mistborn <span>by Brandon Sanderson</span> </h4>
+                        <!-- Image was taken from amazon website -->
+                        <img src="https://m.media-amazon.com/images/I/91U6rc7u0yL.jpg" alt="mistborn book cover" height="400" width="300">
+                    </div>
+
+                    <div id="right-side">
+                        <details> 
+                            <summary>Click for more details about the book</summary>
+                            [short description]
+                        </details>                        
+                        <a href="https://www.goodreads.com/user/show/147553005-haley-nguyen">
+                            Check out my Goodreads!
+                        </a>
+                    </div>
+                    
                 </div>
 
-                <aside>
-                    <a href="https://www.goodreads.com/user/show/147553005-haley-nguyen">
-                        Check out my Goodreads!
-                    </a>
-                </aside>
-            </section>
-        </div>
-
-        <div class="section"> 
-            <section id="favSong">
-                <h3>Song that I have on Repeat:</h3>
-                <figure>
-                    <figcaption>Sneak peek of my current favorite song!</figcaption>
-                    <iframe 
-                        src="https://open.spotify.com/embed/track/221qmpQeBNV87sUjQeUTVH?utm_source=generator" >
-                    </iframe>
-                </figure>
-
-                <aside>
-                    <h3>Top 5 favorte artists: </h3>
-                    <ol>
-                        <li>Zedd</li>
-                        <li>Lady Gaga</li>
-                        <li>Metro Boomin</li>
-                        <li>Bruno Mars</li>
-                        <li>Crankdat</li>
-                    </ol>
-                </aside>
             </section>
         </div>
 

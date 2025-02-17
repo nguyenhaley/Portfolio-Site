@@ -5,6 +5,11 @@ body {
     background-color: #121212;
 }
 
+/*
+    pulled from this website: https://threkk.medium.com/how-to-make-a-css-only-hamburger-menu-f7ad41e13399
+    and additional help understanding from ChatGPT
+*/
+
 /* styles my navbar on top */
 #menu { /* Hide the checkbox */
     display: none;
@@ -27,7 +32,7 @@ label[for="menu"] span {
     height: 0.25rem;
     width: 100%;
     background: white;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .navbar-elements {
@@ -42,7 +47,6 @@ label[for="menu"] span {
 .navbar-elements a {
     text-decoration: none;
     color:#9f54fb;
-    font-size: 1.5rem;
 }
 
 .navbar-elements a:hover {
@@ -91,10 +95,14 @@ p {
 }
 
 span {
-    color: #BB86FC;
+    color: color(display-p3 0.6 0.3 1);
 }
 
 /* when users scroll down, they'll scroll between content */
+/* 
+    information found from: 
+    https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-type
+*/
 #scroll-container {
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
@@ -145,7 +153,7 @@ footer img {
 }
 
 /* styling for phones */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .navbar-elements {
         display: none; /* Hide navbar */
         flex-direction: column;
@@ -154,7 +162,6 @@ footer img {
         width: 50dvw;
         height: 50dvh;
         border-radius: 10px;
-        font-size: 1.5rem;
     }
 
     .navbar-elements a {
@@ -192,5 +199,13 @@ footer img {
     footer img {
         width: 8.5dvw;
         height: 5dvh;
+    }
+}
+
+/* styling for larger screens (eg. ipads) */
+@media (max-width: 1100px) {
+    footer img {
+        width: 5dvw;
+        height: 4dvh;
     }
 }

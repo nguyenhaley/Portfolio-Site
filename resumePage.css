@@ -28,7 +28,7 @@ label[for="menu"] span {
     height: 0.25rem;
     width: 100%;
     background: white;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .navbar-elements {
@@ -77,6 +77,46 @@ h1 {
 #resumeDownload:hover {
     font-weight: bold;
 }
+
+/* styling for phones */
+@media (max-width: 600px) {
+    .navbar-elements {
+        display: none; /* Hide navbar */
+        flex-direction: column;
+        position: absolute; /* won't move anything around it */
+        background-color: #3d3d3d;
+        width: 50dvw;
+        height: 50dvh;
+        border-radius: 10px;
+        font-size: 1.5rem;
+    }
+
+    .navbar-elements a {
+        color: white;
+    }
+
+    /* Show the hamburger icon */
+    label[for="menu"] {
+        display: flex;
+    }
+
+    /* Show menu when hamburger is clicked on */
+    #menu:checked ~ .navbar-elements {
+        display: flex;
+    }
+
+    #resume-content {
+        flex-direction: column;
+    }
+
+    object {
+        width: 80% !important;
+        height: 60% !important;
+        object-fit: contain;
+    }
+}
+
+
 
 
 

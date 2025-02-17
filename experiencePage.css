@@ -32,7 +32,7 @@ label[for="menu"] span {
     height: 0.25rem;
     width: 100%;
     background: white;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .navbar-elements {
@@ -43,6 +43,7 @@ label[for="menu"] span {
     margin: 1rem;
     padding: 1rem;
     list-style-type: none;
+    z-index: 10;
 }
 
 .navbar-elements a {
@@ -53,6 +54,11 @@ label[for="menu"] span {
 .navbar-elements a:hover {
     color: white;
 }
+
+/*
+    found this website to help with styling:
+    https://www.w3schools.com/howto/howto_css_timeline.asp
+*/
 
 /* timeline container styling */
 .timeline {
@@ -149,4 +155,62 @@ h4 {
 
 h2 {
     text-decoration: underline;
+}
+
+/* styling for phones */
+@media (max-width: 600px) {
+    .navbar-elements {
+        display: none; /* Hide navbar */
+        flex-direction: column;
+        position: absolute; /* won't move anything around it */
+        background-color: #3d3d3d;
+        width: 50dvw;
+        height: 50dvh;
+        border-radius: 10px;
+        font-size: 1.5rem;
+    }
+
+    .navbar-elements a {
+        color: white;
+    }
+
+    /* Show the hamburger icon */
+    label[for="menu"] {
+        display: flex;
+    }
+
+    /* Show menu when hamburger is clicked on */
+    #menu:checked ~ .navbar-elements {
+        display: flex;
+    }
+
+    /* places timeline to left */
+    .timeline::after {
+        left: 30px;
+    }
+
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 5px;
+    }
+
+    /* arrows pointing leftward */
+    .container::before {
+        left: 60px;
+        border: medium solid #3d3d3d;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #3d3d3d;
+    }
+
+    /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+        left: 15px;
+    }
+
+    /* Make all right containers behave like the left ones */
+    .right {
+        left: 0%;
+    }
+
 }

@@ -28,7 +28,7 @@ label[for="menu"] span {
     height: 0.25rem;
     width: 100%;
     background: white;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .navbar-elements {
@@ -84,7 +84,7 @@ button {
 }
 
 button:hover {
-    background-color: #9f54fb;
+    background-color: color-mix(in display-p3, #BB86FC 70%, #4A90E2 30%);
 }
 
 /* styles all project cards so they are displayed nicely */
@@ -105,5 +105,76 @@ button:hover {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    overflow: hidden;
 }
 
+/* styling for phones */
+@media (max-width: 600px) {
+    .navbar-elements {
+        display: none; /* Hide navbar */
+        flex-direction: column;
+        position: absolute; /* won't move anything around it */
+        background-color: #3d3d3d;
+        width: 50dvw;
+        height: 50dvh;
+        border-radius: 10px;
+        font-size: 1.5rem;
+    }
+
+    .navbar-elements a {
+        color: white;
+    }
+
+    /* Show the hamburger icon */
+    label[for="menu"] {
+        display: flex;
+    }
+
+    /* Show menu when hamburger is clicked on */
+    #menu:checked ~ .navbar-elements {
+        display: flex;
+    }
+
+    h1 {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+    }
+
+    img {
+        max-height: 225px;
+        height: 40dvh;
+        width: 70dvw;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+
+    .projectCard {
+        height: 70vh;
+        width: 80vw;
+    }
+
+}
+
+/* styling for larger screens (eg. ipads) */
+@media (max-width: 1100px) {
+    .projectCard {
+        margin-top: 2rem;
+        height: 60vh;
+        max-height: 1000px;
+        width: 60vw;
+        max-width: 800px;
+    }
+
+    img {
+        max-height: 300px;
+        height: 40dvh;
+        width: 50dvw;
+    }
+
+}
