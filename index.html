@@ -92,62 +92,58 @@
         <section class="section" id="contact-info">
             <h2> <strong> Contact Me! </strong></h2>
             <address>
-                <a href="mailto:haley.nguyen821@gmail.com">haley.nguyen821@gmail.com</a> <br>
+                <a href="mailto:haley.nguyen821@gmail.com">haley.nguyen821@gmail.com</a> <br><br>
                 <a href="tel:+18183193961"> +1 (818) 319 - 3961 </a>
             </address>
 
             <div id="quickContact">
-                <a href="#contactForm">Send me a quick message!</a>
-                <dialog id="contactForm">
-                    <p>Fill out this form to send me a quick message</p>
-                    <form method="dialog">
-                        <fieldset> 
-                            <legend>Contact Information</legend>
-                            <div class="formGroup">
-                                <label for="name">Name*</label>
-                                <input 
-                                    type="text"
-                                    name="name"
-                                    id="name"
-                                    required
-                                    class="formElement"
-                                    placeholder="Type your name!"/>
-                            </div>
+                <p>Fill out this form to send me a quick message</p>
+                <form action="https://httpbin.org/post" method="post" id="actualForm">
+                    <fieldset> 
+                        <legend>Contact Information</legend>
+
+                        <input type="hidden" name="possible_bot" value="true"/>
+ 
+                        <label for="name">Name*</label>
+                        <input 
+                            type="text"
+                            name="name"
+                            id="name"
+                            required
+                            class="formElement"
+                            placeholder="Type your name!"/>
+
             
-                            <div class="formGroup">
-                                <label for="email">Email address*</label>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    id="email"
-                                    required
-                                    class="formElement"
-                                    placeholder="Enter your email address!"/>
-                            </div>
-            
-                            <div class="formGroup">
-                                <label for="email">Company name</label>
-                                <input
-                                    type="text"
-                                    name="companyName"
-                                    id="companyName"
-                                    class="formElement"
-                                    placeholder="Enter your company name!"/>
-                            </div>
-            
-                            <div class="formGroup">
-                                <label for="message">What message do you want to send?</label> 
-                                <textarea id="message" name="message" rows="5" cols="33" placeholder="Type your message here..." required></textarea>
-                            </div>
-            
-                            <div class="submit">
-                                <input type="submit" value="Send Message"/>
-                            </div>
-            
-                        </fieldset>
-                    </form>
-                    <button id="closeButton">Close</button>
-                </dialog>
+
+                        <label for="email">Email address*</label>
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            required
+                            class="formElement"
+                            placeholder="Enter your email address!"/>
+
+                        <label for="email">Company name</label>
+                        <input
+                            type="text"
+                            name="companyName"
+                            id="companyName"
+                            class="formElement"
+                            placeholder="Enter your company name!"/>
+
+                        <label for="message">What message do you want to send?*</label> 
+                        <textarea id="message" name="message" rows="5" cols="33" placeholder="Type your message here..." required></textarea>
+
+                        <div class="submit">
+                            <input type="submit" value="Send Message"/>
+                        </div>
+
+                        <output id="errorMessage"></output>
+                        <output id="infoMessage"></output>
+
+                    </fieldset>
+                </form> 
             </div>
 
         </section>
