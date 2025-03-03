@@ -134,7 +134,7 @@
 
                         <label for="message">What message do you want to send? <span> (required) </span> </label> 
                         <!-- pattern was taken from CHATGPT (needed regular expression)-->
-                        <textarea id="message" name="message" rows="5"  cols="33" placeholder="Type your message here..." minlength="8" maxlength="200" required pattern="^[a-zA-Z0-9\s.,!?'-]*$"></textarea>
+                        <textarea id="message" name="message" rows="5"  cols="33" placeholder="Type your message here..." minlength = "1" maxlength="200"></textarea>
                         <div class="submit">
                             <input type="submit" value="Send Message"/>
                         </div>
