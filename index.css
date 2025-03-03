@@ -6,6 +6,17 @@ body {
 }
 
 /*
+[data-theme="dark"] {
+    --background-color: #121212;
+    --color:#BB86FC;
+}
+
+[data-theme="light"] {
+  --background-color: white;
+  --color: black;
+} */
+
+/*
     pulled from this website: https://threkk.medium.com/how-to-make-a-css-only-hamburger-menu-f7ad41e13399
     and additional help understanding from ChatGPT
 */

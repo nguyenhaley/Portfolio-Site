@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta name="description" content="Portfolio homepage">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,13 +29,45 @@
             </ul>
         </nav>
 
+        <!-- <label for="theme">Select a theme:</label> -->
+<!-- 
+        <button id=theme-toggle data-theme-toggle>
+            Change to light theme
+        </button> -->
+
         <!-- 
-        <label for="theme">Select a theme:</label> 
         <select id="theme">
             <option value="light">Light Mode</option>
             <option value="dark">Dark Mode</option>
         </select>
+        -->
 
+        <noscript>
+            <p> Javascript is disabled on this page. Your mode preference will not be saved! </p>
+        </noscript>
+
+        <script>
+            // get theme on page load
+            localStorage.getItem("theme");
+
+            // set theme on button press
+            localStorage.setItem("theme", newTheme);
+
+            const button = document.getElementById('theme-toggle');
+            button.addEventListener('click', () => {
+                const newTheme = currentTheme === "dark" ? "light" : "dark";
+                const newCta = newTheme === "dark" ? "Change to light theme" : "Change to dark theme";
+                button.innerText = newCta; 
+                document.querySelector("html").setAttribute("data-theme", newTheme);
+                // update in local storage
+                localStorage.setItem("theme", newTheme);
+
+                // update the currentThemeSetting in memory
+                currentTheme = newTheme;
+            });
+        </script>
+
+        <!--
         <section class="keyboardHoverableInfo">
             <div class="hoverTitle" > <b> Keyboard shortcuts</b> </div>
             <div class="popup">
