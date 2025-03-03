@@ -1,9 +1,78 @@
+* {box-sizing: border-box;}
+
+#light {
+    width: 1.25rem;
+    margin-left: 0;
+}
+
+#dark {
+    width: 1.25rem;
+    margin-left: 0;
+    margin-right: 0;
+}
+
 body {
+  font-family: "Montserrat", sans-serif;
+  transition: background 0.2s linear;
+  color: #BB86FC;
+  overflow: hidden;
+  background-color: #121212;
+
+}
+
+body.light {
+    background-color: white;
+    color:#BB86FC;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #3d3d3d;
+  width: 3.5rem;
+  height: 1.5rem;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.checkbox-label .ball {
+  background-color: #BB86FC;
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  left: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(30px);
+}
+
+/* light mode styles */
+body.light .navbar-elements {
+    background-color: #BB86FC;
+}
+
+body.light .navbar-elements a {
+    color:#3d3d3d;
+}
+
+body.light .navbar-elements a:hover {
     color: white;
-    font-family: "Montserrat", sans-serif;
-    background-color: #121212;
-    padding: 0;
-    border: 0;
+}
+
+body.light .projectCard {
+    background-color: #d3d3d3;
 }
 
 /* styles my navbar on top */

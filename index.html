@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
-<body>
+<body data-theme="dark">
 
     <header>
         <nav>
@@ -29,42 +29,41 @@
             </ul>
         </nav>
 
-        <!-- <label for="theme">Select a theme:</label> -->
-<!-- 
-        <button id=theme-toggle data-theme-toggle>
-            Change to light theme
-        </button> -->
-
-        <!-- 
-        <select id="theme">
-            <option value="light">Light Mode</option>
-            <option value="dark">Dark Mode</option>
-        </select>
-        -->
+        <!-- reference for theme toggle: https://codepen.io/Umer_Farooq/pen/eYJgKGN -->
+        <div id="toggle-switch">
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" class="checkbox-label">
+                <img src="https://assets.streamlinehq.com/image/private/w_512,h_512,ar_1/f_auto/v1/icons/freebies-freemojis/animals-nature/animals-nature/crescent-moon-c6qazn5ca4ut0m5puxm48.png?_a=DATAdtfiZAA0" id="dark" alt="dark mode">
+                <img src="https://cdn-icons-png.freepik.com/512/10493/10493294.png" id="light" alt="light mode">
+              <span class="ball"></span>
+            </label>
+        </div>
 
         <noscript>
             <p> Javascript is disabled on this page. Your mode preference will not be saved! </p>
         </noscript>
 
         <script>
-            // get theme on page load
-            localStorage.getItem("theme");
+            const checkbox = document.getElementById("checkbox");
 
-            // set theme on button press
-            localStorage.setItem("theme", newTheme);
+            document.addEventListener("DOMContentLoaded", () => {
+                // checks to see what localStorage has saved
+                const isDarkMode = localStorage.getItem("darkMode") == "true";
+                checkbox.checked = isDarkMode;
 
-            const button = document.getElementById('theme-toggle');
-            button.addEventListener('click', () => {
-                const newTheme = currentTheme === "dark" ? "light" : "dark";
-                const newCta = newTheme === "dark" ? "Change to light theme" : "Change to dark theme";
-                button.innerText = newCta; 
-                document.querySelector("html").setAttribute("data-theme", newTheme);
-                // update in local storage
-                localStorage.setItem("theme", newTheme);
-
-                // update the currentThemeSetting in memory
-                currentTheme = newTheme;
+                if(isDarkMode) {
+                    document.body.classList.add("light");
+                }
+                else {
+                    document.body.classList.remove("light");
+                }
             });
+
+            checkbox.addEventListener("change", () => {
+                document.body.classList.toggle("light");
+                localStorage.setItem("darkMode", checkbox.checked);
+            });
+
         </script>
 
         <!--

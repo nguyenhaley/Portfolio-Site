@@ -25,6 +25,44 @@
                 <li><a href="lifePage.html">Peek into my life!</a></li>
             </ul>
         </nav>
+
+        <!-- reference for theme toggle: https://codepen.io/Umer_Farooq/pen/eYJgKGN -->
+        <div id="toggle-switch">
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" class="checkbox-label">
+                <img src="https://assets.streamlinehq.com/image/private/w_512,h_512,ar_1/f_auto/v1/icons/freebies-freemojis/animals-nature/animals-nature/crescent-moon-c6qazn5ca4ut0m5puxm48.png?_a=DATAdtfiZAA0" id="dark" alt="dark mode">
+                <img src="https://cdn-icons-png.freepik.com/512/10493/10493294.png" id="light" alt="light mode">
+              <span class="ball"></span>
+            </label>
+        </div>
+
+        <noscript>
+            <p> Javascript is disabled on this page. Your mode preference will not be saved! </p>
+        </noscript>
+
+        <script>
+            const checkbox = document.getElementById("checkbox");
+
+            document.addEventListener("DOMContentLoaded", () => {
+                // checks to see what localStorage has saved
+                const isDarkMode = localStorage.getItem("darkMode") == "true";
+                checkbox.checked = isDarkMode;
+
+                if(isDarkMode) {
+                    document.body.classList.add("light");
+                }
+                else {
+                    document.body.classList.remove("light");
+                }
+            });
+
+            checkbox.addEventListener("change", () => {
+                document.body.classList.toggle("light");
+                localStorage.setItem("darkMode", checkbox.checked);
+            });
+
+        </script>
+
         <!--
         <section class="keyboardHoverableInfo">
             <div class="hoverTitle"> <b> Keyboard shortcuts</b> </div>
