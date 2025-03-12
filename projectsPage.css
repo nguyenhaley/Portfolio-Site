@@ -15,7 +15,7 @@ body {
   font-family: "Montserrat", sans-serif;
   transition: background 0.2s linear;
   color: #BB86FC;
-  overflow: hidden;
+  /*overflow: hidden;*/
   background-color: #121212;
 
 }
@@ -157,7 +157,7 @@ button:hover {
 }
 
 /* styles all project cards so they are displayed nicely */
-.allProjects {
+#allProjects {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -175,6 +175,11 @@ button:hover {
     justify-content: space-evenly;
     align-items: center;
     overflow: hidden;
+}
+
+picture img{
+    width: 18rem;
+    height: 15rem;
 }
 
 /* styling for phones */

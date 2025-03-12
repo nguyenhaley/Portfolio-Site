@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Projects Page </title>
     <link rel="stylesheet" href="projectsPage.css">
+    <!-- <script src="projectsPage.js"></script> -->
+    
 </head>
 <body>
 
@@ -61,55 +63,85 @@
                 localStorage.setItem("darkMode", checkbox.checked);
             });
 
+            const projectArray = [
+                {
+                    name: "Web Developer Journal",
+                    description: "This is a project that I developed for a class at UCSD with the help of 11 other students. I helped with the calendar and mood widget aspect of the journal and also helped develop the homepage layout.",
+                    image_url: "../assets/projectSC.png",
+                    altText: "web developer journal screenshot",
+                    githubLink: "https://github.com/cse110-sp24-group5/cse110-sp24-group5",
+                },
+                {
+                    name: "Task Manager App",
+                    description: "A web application to manage daily tasks with to-do lists.",
+                    image_url: "https://example.com/task-manager-app.jpg",
+                }
+            ];
+
+            class projectCard extends HTMLElement {
+                constructor() {
+                    super();
+                }
+
+                connectedCallback() {
+
+                    const title = this.getAttribute('title') || 'Unknown title';
+                    const description = this.getAttribute('description') || 'Unknown description';
+                    const imageUrl = this.getAttribute('image-url') || '';
+                    const altText = this.getAttribute('alt-text') || 'Unknown alternative image text';
+                    const githubLink = this.getAttribute('github-link') || "Unknown github link";
+
+                    this.innerHTML = '';
+                    this.innerHTML += `
+                        <div class="projectCard">
+                            <h2 class="title">${title}</h2>
+                            <picture>
+                                <img src="${imageUrl}" alt="${altText}" >
+                            </picture>
+                            <p class="description">${description}</p>
+                            <a href="${githubLink}"><button> Github Link </button></a>
+                        </div>
+                    `;
+                }
+
+            }
+
+            window.addEventListener('DOMContentLoaded', async () => {
+                const url = "https://api.jsonbin.io/v3/b/67d0edd48960c979a56fdb90";
+
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) {
+                        throw new Error(`Response status: ${response.status}`);
+                    }
+
+                    const jsonData = await response.json();
+                    jsonData.record.forEach(project => {
+                        window.projectElement = document.createElement("project-card");
+                        window.projectElement.setAttribute("title", `${project.name}`);
+                        window.projectElement.setAttribute("description", `${project.description}`);
+                        window.projectElement.setAttribute("image-url", `${project.image_url}`);
+                        window.projectElement.setAttribute("alt-text", `${project.altText}`);
+                        window.projectElement.setAttribute("github-link", `${project.githubLink}`);
+                        document.getElementById("allProjects").appendChild(window.projectElement);
+                    });
+
+                } catch (error) {
+                    console.error(error.message);
+                }
+
+            });
+
+            customElements.define('project-card', projectCard);
+
         </script>
-
-        <!--
-        <section class="keyboardHoverableInfo">
-            <div class="hoverTitle"> <b> Keyboard shortcuts</b> </div>
-            <div class="popup">
-                <h1>Keyboard shortcuts</h1>
-                <h3>MacOS</h3>
-                <ul>
-                    <li> Press <kbd>CMD</kbd> + <kbd>1</kbd> to access the homepage </li>
-                    <li> Press <kbd>CMD</kbd> + <kbd>2</kbd> to access the resume page </li>
-                    <li> Press <kbd>CMD</kbd> + <kbd>3</kbd> to access the experiences page </li>
-                    <li> Press <kbd>CMD</kbd> + <kbd>4</kbd> to access the about me page </li>
-                    <li> Press <kbd>CMD</kbd> + <kbd>5</kbd> to access the hobbies/interests page </li>
-                    <li> Press <kbd>CMD</kbd> + <kbd>6</kbd> to access the projects page </li>
-                    <li> Press <kbd>CMD</kbd> + <kbd>7</kbd> to access the peek into my life page </li>
-                </ul>
-                <h3>Windows/Linux</h3>
-                <ul>
-                    <li> Press <kbd>CTRL</kbd> + <kbd>1</kbd> to access the homepage </li>
-                    <li> Press <kbd>CTRL</kbd> + <kbd>2</kbd> to access the resume page </li>
-                    <li> Press <kbd>CTRL</kbd> + <kbd>3</kbd> to access the experiences page </li>
-                    <li> Press <kbd>CTRL</kbd> + <kbd>4</kbd> to access the about me page </li>
-                    <li> Press <kbd>CTRL</kbd> + <kbd>5</kbd> to access the hobbies/interests page </li>
-                    <li> Press <kbd>CTRL</kbd> + <kbd>6</kbd> to access the projects page </li>
-                    <li> Press <kbd>CTRL</kbd> + <kbd>7</kbd> to access the peek into my life page </li>
-                </ul>
-            </div>
-        </section>
-        -->
-
+        
     </header>
 
     <h1> Projects </h1>
 
-    <section class="allProjects">
-
-        <div class="projectCard">
-            <h4><b>Web Developer Journal</b></h4>
-            <img src="../assets/projectSC.png" alt="Project sample" width="300" height="180">
-            <p>
-                This is a project that I developed for a class at UCSD with the
-                help of 11 other students. I helped with the calendar and mood widget aspect
-                of the journal and also helped develop the homepage layout.
-            </p>
-            <button>Github Link</button>
-        </div>
-        
+    <section id="allProjects">
     </section>
-
+    
 </body>
 </html>
