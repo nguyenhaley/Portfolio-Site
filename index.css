@@ -1,12 +1,12 @@
 * {box-sizing: border-box;}
 
 #light {
-    width: 1.25rem;
+    max-width: 1.25rem;
     margin-left: 0;
 }
 
 #dark {
-    width: 1.25rem;
+    max-width: 1.25rem;
     margin-left: 0;
     margin-right: 0;
 }
@@ -116,6 +116,7 @@ label[for="menu"] span {
     margin: 1rem;
     padding: 1rem;
     list-style-type: none;
+    font-size: 1.5rem;
 }
 .navbar-elements a {
     text-decoration: none;
@@ -147,7 +148,7 @@ h1 {
 
 h2 {
     font-size: 4rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
 }
 
 #contact-info h2 {
@@ -157,6 +158,7 @@ h2 {
 #main-text {
     display: flex;
     flex-direction: column;  
+    max-width: 40vw;
 }
 
 /* styles my short description (below heading) */
@@ -179,7 +181,7 @@ span {
 #scroll-container {
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
-    height: 85vh;
+    height: 90vh;
     margin-top: -2.5%;
 }
 
@@ -190,7 +192,7 @@ span {
     align-items: center;
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    height: 95dvh;
+    height: 90dvh;
 }
 
 /* styles my contact information page */
@@ -260,24 +262,15 @@ legend {
     margin-bottom: 1rem;
 }
 
+footer {
+    position:relative;
+    bottom: 7.5vh;
+}
+
 footer img {
     width: 3dvw;
     height: 5dvh;
 }
-
-/*
-input:invalid, textarea:invalid{
-    background-color: #ff7f7f;
-}
-
-input:user-invalid, textarea:user-invalid{
-    background-color: #ff7f7f;
-}
-
-input:valid, textarea:valid {
-    background-color: #88e788; 
-}
-*/
 
 span {
     color: white;
@@ -363,8 +356,6 @@ textarea {
 }
 
 /* character counting in textarea styling */
-
-
 #infoMessage.error {
     background-color: red;
     color: white;
@@ -433,8 +424,93 @@ textarea {
 
 /* styling for larger screens (eg. ipads) */
 @media (max-width: 1100px) {
+    .navber-elements {
+        font-size: 1rem;
+    }
+    
+    footer {
+        bottom: 2.5rem;
+    }
+
     footer img {
         width: 5dvw;
         height: 4dvh;
     }
+}
+
+/* styling for screens in-between regular ipads and phones */
+@media (max-width: 900px) {
+    #light {
+        max-width: 1rem;
+        max-height: 1rem;
+    }
+    
+    #dark {
+        max-width: 1rem;
+        max-height: 1rem;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        max-height: 10vh;
+        align-items: center;
+    }
+
+    footer {
+        bottom: 0;
+    }
+
+    .navbar-elements {
+        margin-top: 40rem;
+    }
+
+}
+
+/* styling for smaller screens (eg. phones) */
+@media (max-width: 480px) {
+    #light {
+        max-width: 1rem;
+        max-height: 1rem;
+    }
+    
+    #dark {
+        max-width: 1rem;
+        max-height: 1rem;
+    }
+
+    .checkbox-label {
+        margin: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    body.light label[for="menu"] span {
+        background-color: #3d3d3d;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navbar-elements {
+        margin-top: 4rem;
+    }
+
+    footer {
+        bottom: 1rem;
+    }
+
+    footer img {
+        width: 7vw;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    address a {
+        font-size: 1rem;
+    }
+
 }
