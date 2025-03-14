@@ -143,10 +143,12 @@ h1 {
 h3 {
     padding-left: 2rem;
     text-decoration: underline;
+    font-size: 2rem;
 }
 
 h4 {
     font-size: 1rem;
+    margin-top: 0;
 }
 
 p {
@@ -159,6 +161,14 @@ p {
     overflow-y: scroll;
     height: 100vh;
     margin-top: -1%;
+}
+
+.section hgroup {
+    padding-left: 1rem;
+    text-align: left;
+    display: block;
+    align-self: flex-start;
+    margin-top: 1rem;
 }
 
 .section {
@@ -192,15 +202,11 @@ class-card {
 }
 
 #courses {
-    margin-top: 9rem;
+    margin-top: 7rem;
 }
 
-h3 {
-    font-size: 2rem;
-}
-
-h4 {
-    margin-top: 0;
+#secondPage {
+    margin-top: 5rem;
 }
 
 #bookDetails {
