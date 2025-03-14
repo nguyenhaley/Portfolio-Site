@@ -1,12 +1,12 @@
 * {box-sizing: border-box;}
 
 #light {
-    width: 1.25rem;
+    max-width: 1.25rem;
     margin-left: 0;
 }
 
 #dark {
-    width: 1.25rem;
+    max-width: 1.25rem;
     margin-left: 0;
     margin-right: 0;
 }
@@ -15,9 +15,7 @@ body {
   font-family: "Fredoka", sans-serif;
   transition: background 0.2s linear;
   color: #BB86FC;
-  /*overflow: hidden;*/
   background-color: #121212;
-
 }
 
 body.light {
@@ -71,9 +69,18 @@ body.light .navbar-elements a:hover {
     color: white;
 }
 
-body.light .projectCard {
-    background-color: #d3d3d3;
+body.light p {
+    color:#3d3d3d;
 }
+
+body.light span {
+    color:#9f54fb;
+}
+
+/*
+    pulled from this website: https://threkk.medium.com/how-to-make-a-css-only-hamburger-menu-f7ad41e13399
+    and additional help understanding from ChatGPT
+*/
 
 /* styles my navbar on top */
 #menu { /* Hide the checkbox */
@@ -102,17 +109,17 @@ label[for="menu"] span {
 
 .navbar-elements {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     background-color: #3d3d3d;
     border-radius: 1rem;
     margin: 1rem;
     padding: 1rem;
     list-style-type: none;
+    font-size: 1.5rem;
 }
-
 .navbar-elements a {
     text-decoration: none;
-    color:#9f54fb;;
+    color:#9f54fb;
 }
 
 .navbar-elements a:hover {
@@ -162,8 +169,6 @@ button:hover {
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    width: 20rem;
-    height: 4rem;
 }
 
 #memoryButtons button {
@@ -193,6 +198,11 @@ button:hover {
     overflow: hidden;
 }
 
+/* when in light mode */
+body.light .projectCard {
+    background-color: #d3d3d3;
+}
+
 picture img{
     width: 18rem;
     height: 15rem;
@@ -200,6 +210,22 @@ picture img{
 
 /* styling for phones */
 @media (max-width: 600px) {
+    #light {
+        max-width: 1rem;
+        max-height: 1rem;
+    }
+    
+    #dark {
+        max-width: 1rem;
+        max-height: 1rem;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     .navbar-elements {
         display: none; /* Hide navbar */
         flex-direction: column;
@@ -209,6 +235,7 @@ picture img{
         height: 50dvh;
         border-radius: 10px;
         font-size: 1.5rem;
+        margin-top: 62vh;
     }
 
     .navbar-elements a {
@@ -218,6 +245,12 @@ picture img{
     /* Show the hamburger icon */
     label[for="menu"] {
         display: flex;
+        margin-top: 3dvh;
+        margin-left: 2dvh;
+    }
+
+    body.light label[for="menu"] span {
+        background-color: #3d3d3d;
     }
 
     /* Show menu when hamburger is clicked on */
@@ -251,8 +284,12 @@ picture img{
 
 }
 
-/* styling for larger screens (eg. ipads) */
-@media (max-width: 1100px) {
+/* styling for larger screens (eg. ipad) */
+@media (min-width: 901px) and (max-width: 1100px) {
+    .navber-elements {
+        font-size: 1rem;
+    }
+
     .projectCard {
         margin-top: 2rem;
         height: 60vh;
@@ -266,5 +303,4 @@ picture img{
         height: 40dvh;
         width: 50dvw;
     }
-
 }
