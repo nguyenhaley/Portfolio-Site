@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Projects Page </title>
     <link rel="stylesheet" href="projectsPage.css">
-    <!-- <script src="projectsPage.js"></script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
     
 </head>
 <body>
@@ -62,24 +64,8 @@
                 document.body.classList.toggle("light");
                 localStorage.setItem("darkMode", checkbox.checked);
             });
-
-            const projectArray = [
-                {
-                    name: "Web Developer Journal",
-                    description: "This is a project that I developed for a class at UCSD with the help of 11 other students. I helped with the calendar and mood widget aspect of the journal and also helped develop the homepage layout.",
-                    image_url: "../assets/projectSC.png",
-                    altText: "web developer journal screenshot",
-                    githubLink: "https://github.com/cse110-sp24-group5/cse110-sp24-group5",
-                },
-                {
-                    name: "Trading Card Collector Site",
-                    description: "This is a project I am currently working on which allows users to log all of their physical Pokemon cards into a digital binder.",
-                    image_url: "",
-                    altText: "starting page screenshot",
-                    githubLink: "https://github.com/nguyenhaley/trading-card-project",
-                }
-            ];
-
+            
+            // creates projectCard element
             class projectCard extends HTMLElement {
                 constructor() {
                     super();
@@ -101,15 +87,74 @@
                                 <img src="${imageUrl}" alt="${altText}" >
                             </picture>
                             <p class="description">${description}</p>
-                            <a href="${githubLink}"><button> Github Link </button></a>
+                            <a href="${githubLink}"><button> Github Repository </button></a>
                         </div>
                     `;
                 }
 
             }
 
+            customElements.define('project-card', projectCard);
+
+            // function to load from localStorage
+            function loadLocal() {
+                const localData = localStorage.getItem('data');
+                if (localData){
+                    const parsedData = JSON.parse(localData);
+                    createProjectCards(parsedData);
+                }
+                else {
+                    alert('No data found in localStorage!');
+                }
+            }
+
+            // function to load from cloud
+            async function loadRemote() {
+                const url = "https://api.jsonbin.io/v3/b/67d21d728561e97a50ead42e";
+
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) {
+                        throw new Error(`Response status: ${response.status}`);
+                    }
+
+                    const jsonData = await response.json();
+                    createProjectCards(jsonData.record);
+
+                    // save to localStorage if loadRemote is called
+                    localStorage.setItem('data', JSON.stringify(jsonData.record));
+
+                } catch (error) {
+                    console.error(error.message);
+                }
+            }
+
+            
+            // function to create cards
+            function createProjectCards(givenData){
+                const container = document.getElementById('allProjects');
+                container.innerHTML = '';
+
+                givenData.forEach (project => {
+                    const projectCard = document.createElement('project-card')
+                    projectCard.setAttribute("title", `${project.name}`);
+                    projectCard.setAttribute("description", `${project.description}`);
+                    projectCard.setAttribute("image-url", `${project.image_url}`);
+                    projectCard.setAttribute("alt-text", `${project.altText}`);
+                    projectCard.setAttribute("github-link", `${project.githubLink}`);
+                    container.appendChild(projectCard);
+                });
+            }
+
+            // adding event listeners
+            window.addEventListener('DOMContentLoaded', () => {
+                document.getElementById('local').addEventListener('click', loadLocal);
+                document.getElementById('remote').addEventListener('click', loadRemote);
+            });
+
+            /*
             window.addEventListener('DOMContentLoaded', async () => {
-                const url = "https://api.jsonbin.io/v3/b/67d0edd48960c979a56fdb90";
+                const url = "https://api.jsonbin.io/v3/b/67d21d728561e97a50ead42e";
 
                 try {
                     const response = await fetch(url);
@@ -133,8 +178,7 @@
                 }
 
             });
-
-            customElements.define('project-card', projectCard);
+            */
 
         </script>
 
@@ -142,7 +186,64 @@
 
     <h1> Projects </h1>
 
+    <section id="memoryButtons">
+        <button id="local"> Load Local </button>
+        <button id="remote"> Load Remote </button>
+    </section>
+    <script>
+
+    </script>
+
     <section id="allProjects">
+    <!-- 
+        <project-card
+            title="Web Developer Journal"
+            description="This is a project that I developed for a class at UCSD with the help of 11 other students. I helped with the calendar and mood widget aspect of the journal and also helped develop the homepage layout."
+            image-url="../assets/projectSC.png"
+            alt-text="web developer journal screenshot"
+            github-link="https://github.com/cse110-sp24-group5/cse110-sp24-group5">
+        </project-card>
+
+        <project-card
+            title="Trading Card Collector Site"
+            description="This is a project I am currently working on which allows users to log all of their physical Pokemon cards into a digital binder."
+            image-url="../assets/tradingCardStarting.png"
+            alt-text="starting page screenshot"
+            github-link="https://github.com/nguyenhaley/trading-card-project">
+        </project-card>
+
+        <project-card
+            title="Random Project"
+            description="This is a project placeholder since I do not have anymore!"
+            image-url="https://media.istockphoto.com/id/1409329028/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=_zOuJu755g2eEUioiOUdz_mHKJQJn-tDgIAhQzyeKUQ="
+            alt-text="placeholder image"
+            github-link="https://github.com/nguyenhaley?tab=repositories">
+        </project-card>
+
+        <project-card
+            title="Random Project"
+            description="This is a project placeholder since I do not have anymore!"
+            image-url="https://media.istockphoto.com/id/1409329028/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=_zOuJu755g2eEUioiOUdz_mHKJQJn-tDgIAhQzyeKUQ="
+            alt-text="placeholder image"
+            github-link="https://github.com/nguyenhaley?tab=repositories">
+        </project-card>
+
+        <project-card
+            title="Random Project"
+            description="This is a project placeholder since I do not have anymore!"
+            image-url="https://media.istockphoto.com/id/1409329028/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=_zOuJu755g2eEUioiOUdz_mHKJQJn-tDgIAhQzyeKUQ="
+            alt-text="placeholder image"
+            github-link="https://github.com/nguyenhaley?tab=repositories">
+        </project-card>
+
+        <project-card
+            title="Random Project"
+            description="This is a project placeholder since I do not have anymore!"
+            image-url="https://media.istockphoto.com/id/1409329028/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=_zOuJu755g2eEUioiOUdz_mHKJQJn-tDgIAhQzyeKUQ="
+            alt-text="placeholder image"
+            github-link="https://github.com/nguyenhaley?tab=repositories">
+        </project-card>
+    -->
     </section>
     
 </body>

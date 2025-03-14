@@ -12,7 +12,7 @@
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Fredoka", sans-serif;
   transition: background 0.2s linear;
   color: #BB86FC;
   /*overflow: hidden;*/
@@ -122,9 +122,10 @@ label[for="menu"] span {
 /* styles "Projects" title*/
 h1 {
     color: #BB86FC;
-    font-size: 2rem;
-    padding-left: 2rem;
-
+    font-size: 3rem;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 /* styles all card titles */
@@ -156,17 +157,32 @@ button:hover {
     background-color: color-mix(in display-p3, #BB86FC 70%, #4A90E2 30%);
 }
 
+#memoryButtons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 20rem;
+    height: 4rem;
+}
+
+#memoryButtons button {
+    width: 9rem;
+    height: 3rem;
+}
+
 /* styles all project cards so they are displayed nicely */
 #allProjects {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    gap: 1rem;
 }
 
 /* styling for inside of each project card */
 .projectCard {
     background-color: #3d3d3d;
-    height: 70vh;
+    height: 65vh;
     width: 30vw;
     border-radius: 2rem;
     text-align: center;
