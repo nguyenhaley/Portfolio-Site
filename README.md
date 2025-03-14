@@ -1,1 +1,2 @@
-# cse134-hw4
+# cse134-hw5
+**Improvements:** I implemented several changes to enhance the user experience and ensure consistency across the site. I expanded the media queries to make the layout more responsive and accommodating to various screen sizes. The light mode theme colors were standardized across all pages to maintain visual coherence. Additionally, I updated the font for improved readability and aesthetics and ensured the footer on the homepage is accessible on all screen sizes, allowing users to easily navigate important links. Lastly, I fixed the theme toggle images to retain their size across different devices to help improve user experience. These changes were made to prioritize usability, accessibility, and a cohesive design for all users. 
