@@ -158,7 +158,7 @@ h2 {
 #main-text {
     display: flex;
     flex-direction: column;  
-    max-width: 40vw;
+    max-width: 70vw;
 }
 
 /* styles my short description (below heading) */
@@ -372,8 +372,33 @@ textarea {
     color: green;
 }
 
+
 /* styling for phones */
-@media (max-width: 800px) {
+@media (max-width: 600px) {
+    #light {
+        max-width: 1rem;
+        max-height: 1rem;
+    }
+    
+    #dark {
+        max-width: 1rem;
+        max-height: 1rem;
+    }
+
+    .checkbox-label {
+        margin: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    body.light label[for="menu"] span {
+        background-color: #3d3d3d;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
     .navbar-elements {
         display: none; /* Hide navbar */
         flex-direction: column;
@@ -382,6 +407,7 @@ textarea {
         width: 50dvw;
         height: 50dvh;
         border-radius: 10px;
+        margin-top: 4rem;
     }
 
     .navbar-elements a {
@@ -416,87 +442,6 @@ textarea {
         font-size: 1rem;
     }
 
-    footer img {
-        width: 8.5dvw;
-        height: 5dvh;
-    }
-}
-
-/* styling for larger screens (eg. ipads) */
-@media (max-width: 1100px) {
-    .navber-elements {
-        font-size: 1rem;
-    }
-    
-    footer {
-        bottom: 2.5rem;
-    }
-
-    footer img {
-        width: 5dvw;
-        height: 4dvh;
-    }
-}
-
-/* styling for screens in-between regular ipads and phones */
-@media (max-width: 900px) {
-    #light {
-        max-width: 1rem;
-        max-height: 1rem;
-    }
-    
-    #dark {
-        max-width: 1rem;
-        max-height: 1rem;
-    }
-
-    nav {
-        display: flex;
-        justify-content: space-between;
-        max-height: 10vh;
-        align-items: center;
-    }
-
-    footer {
-        bottom: 0;
-    }
-
-    .navbar-elements {
-        margin-top: 40rem;
-    }
-
-}
-
-/* styling for smaller screens (eg. phones) */
-@media (max-width: 480px) {
-    #light {
-        max-width: 1rem;
-        max-height: 1rem;
-    }
-    
-    #dark {
-        max-width: 1rem;
-        max-height: 1rem;
-    }
-
-    .checkbox-label {
-        margin: 0.5rem;
-        margin-top: 1rem;
-    }
-
-    body.light label[for="menu"] span {
-        background-color: #3d3d3d;
-    }
-
-    nav {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .navbar-elements {
-        margin-top: 4rem;
-    }
-
     footer {
         bottom: 1rem;
     }
@@ -512,5 +457,21 @@ textarea {
     address a {
         font-size: 1rem;
     }
+}
 
+
+/* styling for larger screens (eg. ipads) */
+@media (min-width: 901px) and (max-width: 1100px) {
+    .navber-elements {
+        font-size: 1rem;
+    }
+    
+    footer {
+        bottom: 2.5rem;
+    }
+
+    footer img {
+        width: 5dvw;
+        height: 4dvh;
+    }
 }

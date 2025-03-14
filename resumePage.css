@@ -1,23 +1,22 @@
 * {box-sizing: border-box;}
 
 #light {
-    width: 1.25rem;
+    max-width: 1.25rem;
     margin-left: 0;
 }
 
 #dark {
-    width: 1.25rem;
+    max-width: 1.25rem;
     margin-left: 0;
     margin-right: 0;
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Fredoka", sans-serif;
   transition: background 0.2s linear;
   color: #BB86FC;
   overflow: hidden;
   background-color: #121212;
-
 }
 
 body.light {
@@ -71,10 +70,18 @@ body.light .navbar-elements a:hover {
     color: white;
 }
 
-body.light #resumeDownload {
-    background-color: #D3D3D3;
+body.light p {
     color:#3d3d3d;
 }
+
+body.light span {
+    color:#9f54fb;
+}
+
+/*
+    pulled from this website: https://threkk.medium.com/how-to-make-a-css-only-hamburger-menu-f7ad41e13399
+    and additional help understanding from ChatGPT
+*/
 
 /* styles my navbar on top */
 #menu { /* Hide the checkbox */
@@ -103,14 +110,14 @@ label[for="menu"] span {
 
 .navbar-elements {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     background-color: #3d3d3d;
     border-radius: 1rem;
     margin: 1rem;
     padding: 1rem;
     list-style-type: none;
+    font-size: 1.5rem;
 }
-
 .navbar-elements a {
     text-decoration: none;
     color:#9f54fb;
@@ -119,6 +126,7 @@ label[for="menu"] span {
 .navbar-elements a:hover {
     color: white;
 }
+
 
 /* style for resume content */
 h1 {
@@ -132,8 +140,8 @@ h1 {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    height: 90vh;
-    margin-top: -2.0rem;
+    height: 75vh;
+    margin-top: 1rem;
 }
 
 #resumeDownload {
@@ -151,6 +159,31 @@ h1 {
 
 /* styling for phones */
 @media (max-width: 600px) {
+    #light {
+        max-width: 1rem;
+        max-height: 1rem;
+    }
+    
+    #dark {
+        max-width: 1rem;
+        max-height: 1rem;
+    }
+
+    .checkbox-label {
+        margin: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    body.light label[for="menu"] span {
+        background-color: #3d3d3d;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
     .navbar-elements {
         display: none; /* Hide navbar */
         flex-direction: column;
@@ -160,6 +193,7 @@ h1 {
         height: 50dvh;
         border-radius: 10px;
         font-size: 1.5rem;
+        margin-top: 60vh;
     }
 
     .navbar-elements a {
@@ -184,6 +218,21 @@ h1 {
         width: 80% !important;
         height: 60% !important;
         object-fit: contain;
+    }
+
+    h1 {
+        margin-top: 1rem;
+    }
+}
+
+/* styling for larger screens (eg. ipad) */
+@media (min-width: 901px) and (max-width: 1100px) {
+    .navber-elements {
+        font-size: 1rem;
+    }
+
+    #resume-content {
+        margin-top: 3rem;
     }
 }
 
