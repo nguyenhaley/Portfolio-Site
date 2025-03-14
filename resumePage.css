@@ -146,14 +146,14 @@ h1 {
 #resumeDownload {
     display: inline-block;
     text-decoration: none;
-    background-color: #3d3d3d;
+    background-color: #BB86FC;
     padding: 1rem;
     color:white;
     border-radius: 1em;
 }
 
 #resumeDownload:hover {
-    font-weight: bold;
+    background-color: color-mix(in display-p3, #BB86FC 70%, #4A90E2 30%);
 }
 
 /* styling for phones */

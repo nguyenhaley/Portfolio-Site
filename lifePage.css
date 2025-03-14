@@ -1,23 +1,21 @@
 * {box-sizing: border-box;}
 
 #light {
-    width: 1.25rem;
+    max-width: 1.25rem;
     margin-left: 0;
 }
 
 #dark {
-    width: 1.25rem;
+    max-width: 1.25rem;
     margin-left: 0;
     margin-right: 0;
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Fredoka", sans-serif;
   transition: background 0.2s linear;
   color: #BB86FC;
-  overflow: hidden;
   background-color: #121212;
-
 }
 
 body.light {
@@ -71,9 +69,22 @@ body.light .navbar-elements a:hover {
     color: white;
 }
 
+body.light p {
+    color:#3d3d3d;
+}
+
+body.light span {
+    color:#9f54fb;
+}
+
 body.light class-card {
     background-color: #d3d3d3;
 }
+
+/*
+    pulled from this website: https://threkk.medium.com/how-to-make-a-css-only-hamburger-menu-f7ad41e13399
+    and additional help understanding from ChatGPT
+*/
 
 /* styles my navbar on top */
 #menu { /* Hide the checkbox */
@@ -102,17 +113,17 @@ label[for="menu"] span {
 
 .navbar-elements {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     background-color: #3d3d3d;
     border-radius: 1rem;
     margin: 1rem;
     padding: 1rem;
     list-style-type: none;
+    font-size: 1.5rem;
 }
-
 .navbar-elements a {
     text-decoration: none;
-    color:#9f54fb;;
+    color:#9f54fb;
 }
 
 .navbar-elements a:hover {
@@ -120,7 +131,7 @@ label[for="menu"] span {
 }
 
 hgroup {
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 
 h1 {
@@ -146,7 +157,7 @@ p {
 #scroll-container {
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
-    height: 85vh;
+    height: 100vh;
     margin-top: -1%;
 }
 
@@ -181,12 +192,11 @@ class-card {
 }
 
 #courses {
-    margin-top: 10rem;
+    margin-top: 9rem;
 }
 
 h3 {
     font-size: 2rem;
-    margin-top: 5rem;
 }
 
 h4 {
@@ -221,6 +231,22 @@ h4 {
 
 /* styling for phones */
 @media (max-width: 600px) {
+    #light {
+        max-width: 1rem;
+        max-height: 1rem;
+    }
+    
+    #dark {
+        max-width: 1rem;
+        max-height: 1rem;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     .navbar-elements {
         display: none; /* Hide navbar */
         flex-direction: column;
@@ -230,6 +256,7 @@ h4 {
         height: 50dvh;
         border-radius: 10px;
         font-size: 1.5rem;
+        margin-top: 62vh;
     }
 
     .navbar-elements a {
@@ -239,6 +266,12 @@ h4 {
     /* Show the hamburger icon */
     label[for="menu"] {
         display: flex;
+        margin-top: 3dvh;
+        margin-left: 2dvh;
+    }
+
+    body.light label[for="menu"] span {
+        background-color: #3d3d3d;
     }
 
     /* Show menu when hamburger is clicked on */
@@ -249,11 +282,12 @@ h4 {
     hgroup {
         text-align: center;
         padding-left: 0;
+        margin-top: 2rem;
     }
 
     h3 {
         font-size: 1rem;
-        margin-top: 1rem !important;
+        margin-top: 2vh !important;
         padding-left: 0;
     }
 
@@ -285,6 +319,24 @@ h4 {
         margin-right: 1rem;
         font-size: 0.75rem;
     }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    #secondPage {
+        margin-top: 100vh;
+    }
+
+    #secondPage h3 {
+        margin-top: 15vh !important;
+    }
+
 }
 
 @media (max-width: 1100px) and (min-width: 601px) {
@@ -297,5 +349,8 @@ h4 {
         margin-top: 20%;
     }
 
+    .navber-elements {
+        font-size: 1rem;
+    }
 }
 
