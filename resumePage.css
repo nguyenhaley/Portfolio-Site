@@ -1,61 +1,24 @@
+/* pulled from this site: https://animated-gradient-background-generator.netlify.app/ */
+.gradient {
+    background: linear-gradient(211deg,#ffffff,#a980f3,#9cdbf5,#a2a5a7);
+    background-size: 240% 240%;
+    animation: gradient-animation 18s ease infinite;
+}
+  
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+
+
 /*
-    pulled from this website: https://threkk.medium.com/how-to-make-a-css-only-hamburger-menu-f7ad41e13399
-    and additional help understanding from ChatGPT
-*/
-
-/* styles my navbar on top */
-#menu { /* Hide the checkbox */
-    display: none;
-}
-
-/* Style the hamburger menu */
-label[for="menu"] {
-    display: none; /* Hidden on larger screens */
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 3dvh;
-    margin-left: 2dvh;
-    width: 40px;
-    height: 30px;
-}
-
-label[for="menu"] span {
-    display: block;
-    border-radius: 2rem;
-    height: 0.25rem;
-    width: 100%;
-    background: white;
-    transition: 0.2s;
-}
-
-.navbar-elements {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: #3d3d3d;
-    border-radius: 1rem;
-    margin: 1rem;
-    padding: 1rem;
-    list-style-type: none;
-    font-weight: lighter;
-    width: 40rem;
-    height: 2rem;
-}
-.navbar-elements a {
-    text-decoration: none;
-    color:#9f54fb;
-}
-
-.navbar-elements a:hover {
-    color: white;
-}
-
-
-
-
-
-* {box-sizing: border-box;}
-
 #light {
     max-width: 1.25rem;
     margin-left: 0;
@@ -66,15 +29,16 @@ label[for="menu"] span {
     margin-left: 0;
     margin-right: 0;
 }
+*/
 
 body {
-  font-family: "Fredoka", sans-serif;
-  transition: background 0.2s linear;
-  color: #BB86FC;
-  overflow: hidden;
-  background-color: #121212;
+    font-family: "Anton", sans-serif;
+    overflow: hidden;
+    transition: background 0.4s ease, color 0.4s ease;
+    color: white;
 }
 
+/*
 body.light {
     background-color: white;
     color:#BB86FC;
@@ -113,11 +77,16 @@ body.light {
   transform: translateX(30px);
 }
 
-/* light mode styles */
-body.light .navbar-elements {
-    background-color: #BB86FC;
+#toggle-switch {
+    margin-top: 1.5rem;
+    margin-right: 0.5rem;
+    display: flex;
+    justify-content: flex-end;
 }
+*/
 
+/* light mode styles */
+/*
 body.light .navbar-elements a {
     color:#3d3d3d;
 }
@@ -134,53 +103,85 @@ body.light span {
     color:#9f54fb;
 }
 
-/*
-    pulled from this website: https://threkk.medium.com/how-to-make-a-css-only-hamburger-menu-f7ad41e13399
-    and additional help understanding from ChatGPT
+body.light address a {
+    color: #3d3d3d;
+}
 */
 
-/* styles my navbar on top */
-#menu { /* Hide the checkbox */
-    display: none;
+/* styling for navbar */
+.icon1, .icon2, .icon3 {
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    width: 2rem;
+    height: 0.2rem;
+    background-color: white;
 }
 
-/* Style the hamburger menu */
-label[for="menu"] {
-    display: none; /* Hidden on larger screens */
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 3dvh;
-    margin-left: 2dvh;
-    width: 40px;
-    height: 30px;
+.icon1 {
+  transform: translateY(-8px);
 }
 
-label[for="menu"] span {
-    display: block;
-    border-radius: 2rem;
-    height: 0.25rem;
-    width: 100%;
-    background: white;
-    transition: 0.2s;
+.icon3 {
+  transform: translateY(8px);
+}
+
+.hamburger {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    top: 4%;
+    left: 2%;
+    z-index: 1000;
+    border-radius: 50%;
+    background: rgb(58,58,58);
+}
+
+.hamburger:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.2);
+}
+
+nav {
+    background: #D3D3D3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    z-index: 10;
+    opacity: 0;
+    transition: all 600ms cubic-bezier(.62, .04, .3, 1.56);
+    transition-delay: 100ms;
 }
 
 .navbar-elements {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: #3d3d3d;
-    border-radius: 1rem;
-    margin: 1rem;
-    padding: 1rem;
-    list-style-type: none;
-    font-size: 1.5rem;
+    margin: 0;
+    position: absolute;
+    top: 20%;
+    left: 20%;
 }
+
+.navbar-elements li {
+    list-style-type: none;
+    font-size: 2rem;
+    line-height: 2.2;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
 .navbar-elements a {
     text-decoration: none;
-    color:#9f54fb;
+    color: #a980f3;
 }
 
 .navbar-elements a:hover {
     color: white;
+}
+
+nav.show {
+  width: 30%;
+  opacity: 1;
 }
 
 /* style for resume content */
@@ -188,7 +189,7 @@ h1 {
     text-align: center;
     margin-bottom: 0;
     font-size: 2rem;
-    margin-top: 0;
+    margin-top: 5%;
 }
 
 #resume-content {
@@ -202,14 +203,18 @@ h1 {
 #resumeDownload {
     display: inline-block;
     text-decoration: none;
-    background-color: #BB86FC;
+    background-color: #3d3d3d;
     padding: 1rem;
     color:white;
     border-radius: 1em;
 }
 
 #resumeDownload:hover {
-    background-color: color-mix(in display-p3, #BB86FC 70%, #4A90E2 30%);
+    transform: scale(1.2);
+}
+
+#resume-content a {
+    font-family: "Roboto Flex", sans-serif;
 }
 
 /* styling for phones */

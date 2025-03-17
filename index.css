@@ -40,12 +40,12 @@
 }
 
 .hidden {
-    animation: fadeOutAnimation 2s forwards;
+    animation: fadeOutAnimation 1s forwards;
     opacity: 0;
 }
 
 .show {
-    animation: fadeInAnimation 2s forwards;
+    animation: fadeInAnimation 1s forwards;
     opacity: 1;
 }
 

@@ -7,13 +7,58 @@
     <link rel="stylesheet" href="lifePage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@200..700&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="gradient">
 
     <header>
-        <nav>
-            <!-- hamburger menu symbols -->
+        <!-- pulled animation from this codepen: https://codepen.io/pranjal9599/pen/yJRNoL -->
+        <div class="hamburger" id="icon">
+            <div class="icon1" id="a"></div>
+            <div class="icon2" id="b"></div>
+            <div class="icon3" id="c"></div>
+            <div class="empty"></div>
+        </div>
+
+        <nav id="navbar">
+            <ul class="navbar-elements">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resumePage.html">Resume</a></li>
+                <li><a href="experiencePage.html">Experience</a></li>
+                <li><a href="projectsPage.html">Projects</a></li>
+                <li><a href="lifePage.html">Peek into my life!</a></li>
+            </ul>
+        </nav>
+
+        <script>
+            var icon = document.getElementById("icon");
+            var icon1 = document.getElementById("a");
+            var icon2 = document.getElementById("b");
+            var icon3 = document.getElementById("c");
+            var navbar = document.getElementById('navbar');
+            var inner = document.getElementById("inner");
+
+            icon.addEventListener('click', function() {
+                icon1.classList.toggle('a');
+                icon2.classList.toggle('c');
+                icon3.classList.toggle('b');
+                navbar.classList.toggle('show');
+            });
+        </script>
+
+        <!-- reference for theme toggle: https://codepen.io/Umer_Farooq/pen/eYJgKGN -->
+        <!-- 
+        <div id="toggle-switch">
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" class="checkbox-label">
+                <img src="https://assets.streamlinehq.com/image/private/w_512,h_512,ar_1/f_auto/v1/icons/freebies-freemojis/animals-nature/animals-nature/crescent-moon-c6qazn5ca4ut0m5puxm48.png?_a=DATAdtfiZAA0" id="dark" alt="dark mode">
+                <img src="https://cdn-icons-png.freepik.com/512/10493/10493294.png" id="light" alt="light mode">
+                <span class="ball"></span>
+            </label>
+        </div>
+        -->
+        <!-- <nav> 
+             hamburger menu symbols 
             <label for="menu" >
                 <span> </span>
                 <span> </span>
@@ -28,7 +73,7 @@
                 <li><a href="lifePage.html">Peek into my life!</a></li>
             </ul>
 
-            <!-- reference for theme toggle: https://codepen.io/Umer_Farooq/pen/eYJgKGN -->
+            reference for theme toggle: https://codepen.io/Umer_Farooq/pen/eYJgKGN 
             <div id="toggle-switch">
                 <input type="checkbox" class="checkbox" id="checkbox">
                 <label for="checkbox" class="checkbox-label">
@@ -38,12 +83,13 @@
                 </label>
             </div>
 
-        </nav>
+        </nav> -->
 
         <noscript>
             <p> Javascript is disabled on this page. Your mode preference will not be saved! </p>
         </noscript>
 
+        <!-- 
         <script>
             const checkbox = document.getElementById("checkbox");
 
@@ -66,12 +112,13 @@
             });
 
         </script>
+        -->
 
     </header>
 
 
     <div id="scroll-container">
-        <div class="section" id="firstPage"> 
+        <div class="hidden section" id="firstPage"> 
             <hgroup>
                 <h1>Take a peek into my current life!</h1>
                 <p>Last updated: February 2, 2025</p>
@@ -107,7 +154,7 @@
             </section>
         </div>
 
-        <div class="section" id="secondPage"> 
+        <div class="hidden section" id="secondPage"> 
             <h3 id="current-book">Book that I am currently reading: </h3>
             <section id="currentReads">
                 <div id="bookDetails">
@@ -120,10 +167,10 @@
                     <div id="right-side">
 
                         <p>
-                            Summary: <br> Once, a hero arose to save the world. He failed. Ever since, the world has been a wasteland of ash 
+                            Summary: <br> <span id="summary"> Once, a hero arose to save the world. He failed. Ever since, the world has been a wasteland of ash 
                             and mist controlled by the immortal emperor known as the Lord Ruler. But hope survives. A new uprising is forming,
                             one built around the ultimate caper, the cunning of a brilliant criminal mastermind, and the determination of an 
-                            unlikely heroine: a street urchin who must learn to master the power of a Mistborn.
+                            unlikely heroine: a street urchin who must learn to master the power of a Mistborn. </span>
                         </p>    
                        
                         <a href="https://www.goodreads.com/user/show/147553005-haley-nguyen">
@@ -135,6 +182,22 @@
 
             </section>
         </div>
+
+        <script>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if(entry.isIntersecting){
+                        entry.target.classList.add('show');
+                    }
+                    else {
+                        entry.target.classList.remove('show');
+                    }
+                });
+            });
+
+            const hiddenElements = document.querySelectorAll(".hidden");
+            hiddenElements.forEach((element) => observer.observe(element));
+        </script>
 
     </div>  
 </body>
