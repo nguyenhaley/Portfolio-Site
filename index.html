@@ -7,15 +7,59 @@
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@200..700&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
 
 </head>
-<body data-theme="dark">
+<body class="gradient" data-theme="dark">
 
     <header>
-        <nav>
-            <!-- hamburger menu symbols -->
+        <!-- pulled animation from this codepen: https://codepen.io/pranjal9599/pen/yJRNoL -->
+        <div class="hamburger" id="icon">
+            <div class="icon1" id="a"></div>
+            <div class="icon2" id="b"></div>
+            <div class="icon3" id="c"></div>
+            <div class="empty"></div>
+        </div>
+
+        <nav id="navbar">
+            <ul class="navbar-elements">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resumePage.html">Resume</a></li>
+                <li><a href="experiencePage.html">Experience</a></li>
+                <li><a href="projectsPage.html">Projects</a></li>
+                <li><a href="lifePage.html">Peek into my life!</a></li>
+            </ul>
+        </nav>
+
+        <script>
+            var icon = document.getElementById("icon");
+            var icon1 = document.getElementById("a");
+            var icon2 = document.getElementById("b");
+            var icon3 = document.getElementById("c");
+            var navbar = document.getElementById('navbar');
+            var inner = document.getElementById("inner");
+
+            icon.addEventListener('click', function() {
+                icon1.classList.toggle('a');
+                icon2.classList.toggle('c');
+                icon3.classList.toggle('b');
+                navbar.classList.toggle('show');
+            });
+        </script>
+
+        <!-- reference for theme toggle: https://codepen.io/Umer_Farooq/pen/eYJgKGN -->
+        <!-- 
+        <div id="toggle-switch">
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" class="checkbox-label">
+                <img src="https://assets.streamlinehq.com/image/private/w_512,h_512,ar_1/f_auto/v1/icons/freebies-freemojis/animals-nature/animals-nature/crescent-moon-c6qazn5ca4ut0m5puxm48.png?_a=DATAdtfiZAA0" id="dark" alt="dark mode">
+                <img src="https://cdn-icons-png.freepik.com/512/10493/10493294.png" id="light" alt="light mode">
+                <span class="ball"></span>
+            </label>
+        </div>
+        -->
+        <!-- <nav> 
+             hamburger menu symbols 
             <label for="menu" >
                 <span> </span>
                 <span> </span>
@@ -23,14 +67,14 @@
             </label>
             <input id="menu" type="checkbox" >
             <ul class="navbar-elements">
-                <li><a href="index.html">Homepage</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="resumePage.html">Resume</a></li>
                 <li><a href="experiencePage.html">Experience</a></li>
                 <li><a href="projectsPage.html">Projects</a></li>
                 <li><a href="lifePage.html">Peek into my life!</a></li>
             </ul>
 
-            <!-- reference for theme toggle: https://codepen.io/Umer_Farooq/pen/eYJgKGN -->
+            reference for theme toggle: https://codepen.io/Umer_Farooq/pen/eYJgKGN 
             <div id="toggle-switch">
                 <input type="checkbox" class="checkbox" id="checkbox">
                 <label for="checkbox" class="checkbox-label">
@@ -40,12 +84,13 @@
                 </label>
             </div>
 
-        </nav>
+        </nav> -->
 
         <noscript>
             <p> Javascript is disabled on this page. Your mode preference will not be saved! </p>
         </noscript>
 
+        <!-- 
         <script>
             const checkbox = document.getElementById("checkbox");
 
@@ -68,24 +113,30 @@
             });
 
         </script>
+        -->
 
     </header>
 
+
     <div id="scroll-container">
 
-        <main class="section" id="main-content">
+        <main class="hidden section" id="welcome">
+            <h1>Hello</h1>
+        </main>
+
+        <section class="hidden section" id="main-content">
             <img src="../assets/disneyHeadshot.jpg" alt="Headshot of Haley Nguyen" width="300" height="450" class="headshot">
 
             <div id="main-text">
-                <h1> Hello, <br> I'm Haley Nguyen. </h1>
+                <h2> My name is <br> <span id="name"> Haley Nguyen </span> </h2>
                 <p> Welcome to my portfolio! </p>
             </div>
 
-        </main>
+        </section>
 
-        <section class="section" id="about-me">
+        <section class="hidden section" id="about-me">
             <h2> About Me </h2>
-            <p>
+            <p id="aboutContent">
                 I am a third-year student at the University of California - San Diego <abbr>(UCSD)</abbr> majoring in
                 <span> computer science </span> with a minor in <span>business analytics </span> and <span>design</span> who is determined to gain more experience in the STEM industry.
                 I hope to apply coursework knowledge in a meaningful way and learn about the similarities and differences between industry and classroom work. 
@@ -94,7 +145,7 @@
         </section>
 
 
-        <section class="section" id="contact-info">
+        <section class="hidden section" id="contact-info">
             <h2> <strong> Contact Me! </strong></h2>
             <address>
                 <a href="mailto:haley.nguyen821@gmail.com">haley.nguyen821@gmail.com</a> <br>
@@ -133,7 +184,7 @@
                             <output id="emailError"></output>
                         </label>
 
-                        <label for="email">Company name 
+                        <label for="companyName"> Company name 
                             <input
                                 type="text"
                                 name="companyName"
@@ -170,6 +221,20 @@
 
 
     <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('show');
+                }
+                else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll(".hidden");
+        hiddenElements.forEach((element) => observer.observe(element));
+
         // improved validation
         // keeping track of errors in form
         const form = document.getElementById('actualForm');
@@ -316,27 +381,6 @@
 
         errorForm.value = JSON.stringify(form_errors);
 
-        // form submission handling
-        // referenced this: https://stackoverflow.com/questions/65509903/how-to-validate-form-with-js-and-store-errors
-        //form.addEventListener('submit', () => {
-            //form_errors = [];
-
-            //if(name.validity.patternMismatch || name.validity.valueMissing){
-                //showNameError();
-            //}
-            //if(email.validity.typeMismatch || email.validity.valueMissing){
-                //showEmailError();
-            //}
-            //if(message.value.length > maxLength){
-                //addError('message', 'char_limit_exceeded', 'Character limit exceeded!');
-            //}
-            //if(message.value.length < 1){
-                //addError('message', 'below_char_requirement', 'You need at least 1 character!');
-            //}
-
-            //errorForm.value = JSON.stringify(form_errors);
-        //});
-        
     </script>
 
 </body>

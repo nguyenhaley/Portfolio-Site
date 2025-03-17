@@ -1,3 +1,59 @@
+/*
+    pulled from this website: https://threkk.medium.com/how-to-make-a-css-only-hamburger-menu-f7ad41e13399
+    and additional help understanding from ChatGPT
+*/
+
+/* styles my navbar on top */
+#menu { /* Hide the checkbox */
+    display: none;
+}
+
+/* Style the hamburger menu */
+label[for="menu"] {
+    display: none; /* Hidden on larger screens */
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 3dvh;
+    margin-left: 2dvh;
+    width: 40px;
+    height: 30px;
+}
+
+label[for="menu"] span {
+    display: block;
+    border-radius: 2rem;
+    height: 0.25rem;
+    width: 100%;
+    background: white;
+    transition: 0.2s;
+}
+
+.navbar-elements {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #3d3d3d;
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+    list-style-type: none;
+    font-weight: lighter;
+    width: 40rem;
+    height: 2rem;
+}
+.navbar-elements a {
+    text-decoration: none;
+    color:#9f54fb;
+}
+
+.navbar-elements a:hover {
+    color: white;
+}
+
+
+
+
+
 * {box-sizing: border-box;}
 
 #light {
