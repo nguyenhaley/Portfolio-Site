@@ -1,2 +1,8 @@
-# cse134-hw5
-**Improvements:** I implemented several changes to enhance the user experience and ensure consistency across the site. I expanded the media queries to make the layout more responsive and accommodating to various screen sizes. Additionally, I updated the font for improved readability and aesthetics and ensured the footer on the homepage is accessible on all screen sizes, allowing users to easily navigate important links. I ended up changing the background into an animated gradient to look more aesthetic and added an animation for the hamburger menu to make it more interesting to use as well. Along with these changes, I had to alter some font colors and played around with different font families. These changes were made to prioritize usability, accessibility, and a cohesive design for all users. 
+# Portfolio Website
+
+Hi there, welcome to my portfolio repository!
+Click on the image to access my portfolio site:
+\
+\
+[![cute cat](https://cdn-icons-png.flaticon.com/256/11172/11172322.png)](https://harmonious-stardust-67dd19.netlify.app/)
+
