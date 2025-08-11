@@ -1,4 +1,9 @@
-* {box-sizing: border-box;}
+:root {
+    --white: #ffffff;
+    --dark-gray: #3d3d3d;
+    --light-gray: #D3D3D3;
+    --light-purple: #a980f3;
+}
 
 /* pulled from this site: https://animated-gradient-background-generator.netlify.app/ */
 .gradient {
@@ -19,114 +24,28 @@
     }
 }
 
-
-/*
-#light {
-    max-width: 1.25rem;
-    margin-left: 0;
-}
-
-#dark {
-    max-width: 1.25rem;
-    margin-left: 0;
-    margin-right: 0;
-}
-*/
-
 body {
-    font-family: "Anton", sans-serif;
-    transition: background 0.4s ease, color 0.4s ease;
-    color: white;
+    font-family: "Inter", sans-serif;
+    /* overflow: hidden;*/
+    color: var(--white);
+    position: relative;
 }
 
-/*
-body.light {
-    background-color: white;
-    color:#BB86FC;
-}
-
-.checkbox {
-  opacity: 0;
-  position: absolute;
-}
-
-.checkbox-label {
-  background-color: #3d3d3d;
-  width: 3.5rem;
-  height: 1.5rem;
-  border-radius: 50px;
-  position: relative;
-  padding: 5px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 1rem;
-}
-
-.checkbox-label .ball {
-  background-color: #BB86FC;
-  width: 23px;
-  height: 23px;
-  position: absolute;
-  left: 2px;
-  border-radius: 50%;
-  transition: transform 0.2s linear;
-}
-
-.checkbox:checked + .checkbox-label .ball {
-  transform: translateX(30px);
-}
-
-#toggle-switch {
-    margin-top: 1.5rem;
-    margin-right: 0.5rem;
-    display: flex;
-    justify-content: flex-end;
-}
-*/
-
-/* light mode styles */
-/*
-body.light .navbar-elements a {
-    color:#3d3d3d;
-}
-
-body.light .navbar-elements a:hover {
-    color: white;
-}
-
-body.light p {
-    color:#3d3d3d;
-}
-
-body.light span {
-    color:#9f54fb;
-}
-
-body.light address a {
-    color: #3d3d3d;
-}
-*/
-
-/* styling for navbar */
+/* styling for hamburger navbar */
 .icon1, .icon2, .icon3 {
     position: absolute;
     left: 25%;
     top: 50%;
     width: 2rem;
-    height: 0.2rem;
-    background-color: white;
+    height: 0.12rem;
+    background-color: var(--white);
 }
-
 .icon1 {
   transform: translateY(-8px);
 }
-
 .icon3 {
   transform: translateY(8px);
 }
-
 .hamburger {
     position: absolute;
     height: 60px;
@@ -135,34 +54,30 @@ body.light address a {
     left: 2%;
     z-index: 1000;
     border-radius: 50%;
-    background: rgb(58,58,58);
+    background: var(--dark-gray);
 }
-
 .hamburger:hover {
   transform: scale(1.2);
-  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.2);
 }
-
 nav {
-    background: #D3D3D3;
+    background: var(--light-gray);
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
+    height: 100vh;
     width: 0%;
     z-index: 10;
     opacity: 0;
     transition: all 600ms cubic-bezier(.62, .04, .3, 1.56);
     transition-delay: 100ms;
+    font-size: large;
 }
-
 .navbar-elements {
     margin: 0;
     position: absolute;
     top: 20%;
     left: 20%;
 }
-
 .navbar-elements li {
     list-style-type: none;
     font-size: 2rem;
@@ -170,149 +85,75 @@ nav {
     text-transform: uppercase;
     letter-spacing: 0.1rem;
 }
-
 .navbar-elements a {
     text-decoration: none;
-    color: #a980f3;
+    color: var(--white);
 }
-
 .navbar-elements a:hover {
-    color: white;
+    color: var(--dark-gray);
 }
-
 nav.show {
   width: 30%;
   opacity: 1;
 }
 
-/*
-    found this website to help with styling:
-    https://www.w3schools.com/howto/howto_css_timeline.asp
-*/
-
-/* timeline container styling */
-.timeline {
+/* timeline styling */
+.timeline-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem 10% 1rem;   
+}
+.timeline-container h1 {
+    font-size: 3rem;
+}
+.content-box {
     position: relative;
-    margin: 2rem;
+    display: flex;
+    margin: 0 2rem;
+    flex-direction: column;
+    padding: 1.5rem;
+    background-color: var(--light-gray);
+    border: 3px solid var(--dark-gray);
+    border-radius: 1rem;
+    transition: 0.4s ease;
+    cursor: pointer;
 }
-  
-/* The actual middle timeline */
-.timeline::after {
-    content: '';
+.content-box:hover{
+    box-shadow: 0 0 25px var(--light-purple);
+    border: 3px solid var(--light-purple);
+}
+.timeline-box{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-left: 5px solid var(--dark-gray);
+}
+.content-box:before{
     position: absolute;
-    width: 0.25rem;
-    background-color: white;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -1px;
-}
-  
-.container {
-    padding: 10px 40px;
-    position: relative;
-    width: 50%;
-}
-  
-/* circles on the timeline */
-.container::after {
     content: '';
-    position: absolute;
     width: 25px;
     height: 25px;
-    right: -1.1rem;
-    background-color: white;
-    border: 4px solid #BB86FC;
-    top: 15px;
+    background-color: var(--dark-gray);
     border-radius: 50%;
-    z-index: 1; /* purple border color will go over center line */
+    left: -50px;
+    top: 90px;
 }
-  
-/* places container to  left */
-.left {
-    left: 0;
+.content-box h3 {
+    margin: 0;
+    padding: 0;
 }
-  
-/* places container to right */
-.right {
-    left: 50%;
-}
-
-/* adds arrows to the left container (they point right) */
-.left::before {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 1.5rem;
-    width: 0;
-    right: 30px;
-    border: solid #3d3d3d;
-    border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent #3d3d3d;
-}
-  
-/* adds arrows to the right container (they point left) */
-.right::before {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 1.5rem;
-    width: 0;
-    left: 30px;
-    border: solid #3d3d3d;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent #3d3d3d transparent transparent;
-}
-  
-/* Fix the circle for containers on the right side */
-.right::after {
-    left: -1rem;
-}
-  
-/* The actual content */
-.content {
-    padding: 1vw 2vw;
-    background-color: #3d3d3d;
-    position: relative;
-    border-radius: 6px;
-}
-
-.left .content {
-    margin-left: 2rem;
-}
-
-.right .content {
-    margin-right: 1rem;
-}
-
-/* text styling */
-h4 {
-    font-size: 1.5rem;
-    color:#BB86FC;
-}
-
-h2 {
-    text-decoration: underline;
-}
-
-p, .description {
-    font-family: "Roboto Flex", sans-serif;
+.date{
+    font-size: larger;
+    font-weight: bold;
+    color: var(--dark-gray);
+    margin-bottom: 0.5rem;
 }
 
 /* styling for phones */
 @media (max-width: 600px) {
-    /*
-    #light {
-        max-width: 1rem;
-        max-height: 1rem;
-    }
-    
-    #dark {
-        max-width: 1rem;
-        max-height: 1rem;
-    }
-    */
-
     nav {
         display: flex;
         justify-content: space-between;
@@ -333,60 +174,6 @@ p, .description {
 
     .navbar-elements a {
         color: white;
-    }
-
-    /* Show the hamburger icon */
-    /*
-    label[for="menu"] {
-        display: flex;
-        margin-top: 3dvh;
-        margin-left: 2dvh;
-    }
-
-    .checkbox-label {
-        margin: 0.5rem;
-        margin-top: 1rem;
-    }
-    */
-
-    /* Show menu when hamburger is clicked on */
-    /*
-    #menu:checked ~ .navbar-elements {
-        display: flex;
-    }
-
-    body.light label[for="menu"] span {
-        background-color: #3d3d3d;
-    }
-    */
-
-    /* places timeline to left */
-    .timeline::after {
-        left: 30px;
-    }
-
-    .container {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 5px;
-    }
-
-    /* arrows pointing leftward */
-    .container::before {
-        left: 60px;
-        border: medium solid #3d3d3d;
-        border-width: 10px 10px 10px 0;
-        border-color: transparent #3d3d3d;
-    }
-
-    /* Make sure all circles are at the same spot */
-    .left::after, .right::after {
-        left: 15px;
-    }
-
-    /* Make all right containers behave like the left ones */
-    .right {
-        left: 0%;
     }
 
 }
