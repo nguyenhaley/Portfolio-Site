@@ -1,63 +1,71 @@
 :root {
-    --white: #ffffff;
-    --dark-gray: #3d3d3d;
-    --light-gray: #D3D3D3;
-    --light-purple: #a980f3;
+  --white: #ffffff;
+  --dark-gray: #3d3d3d;
+  --light-gray: #d3d3d3;
+  --light-purple: #a980f3;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* pulled from this site: https://animated-gradient-background-generator.netlify.app/ */
 .gradient {
-    background: linear-gradient(211deg,var(--white),var(--light-purple),#9cdbf5,#a2a5a7);
-    background-size: 240% 240%;
-    animation: gradient-animation 18s ease infinite;
+  background: linear-gradient(
+    211deg,
+    var(--white),
+    var(--light-purple),
+    #9cdbf5,
+    #a2a5a7
+  );
+  background-size: 240% 240%;
+  animation: gradient-animation 18s ease infinite;
 }
 @keyframes gradient-animation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @keyframes fadeOutAnimation {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 body {
-    font-family: "Inter", sans-serif;
-    overflow: hidden;
-    color: var(--white);
-    position: relative;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+  color: var(--white);
+  position: relative;
 }
 
 /* styling for hamburger navbar */
-.icon1, .icon2, .icon3 {
-    position: absolute;
-    left: 25%;
-    top: 50%;
-    width: 2rem;
-    height: 0.12rem;
-    background-color: var(--white);
+.icon1,
+.icon2,
+.icon3 {
+  position: absolute;
+  left: 25%;
+  top: 50%;
+  width: 2rem;
+  height: 0.12rem;
+  background-color: var(--white);
 }
 .icon1 {
   transform: translateY(-8px);
@@ -66,50 +74,50 @@ body {
   transform: translateY(8px);
 }
 .hamburger {
-    position: absolute;
-    height: 60px;
-    width: 60px;
-    top: 4%;
-    left: 2%;
-    z-index: 1000;
-    border-radius: 50%;
-    background: var(--dark-gray);
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  top: 4%;
+  left: 2%;
+  z-index: 1000;
+  border-radius: 35%;
+  background: var(--dark-gray);
 }
 .hamburger:hover {
   transform: scale(1.2);
 }
 nav {
-    background: var(--light-gray);
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 0%;
-    z-index: 10;
-    opacity: 0;
-    transition: all 600ms cubic-bezier(.62, .04, .3, 1.56);
-    transition-delay: 100ms;
-    font-size: large;
+  background: var(--light-gray);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 0%;
+  z-index: 10;
+  opacity: 0;
+  transition: all 600ms cubic-bezier(0.62, 0.04, 0.3, 1.56);
+  transition-delay: 100ms;
+  font-size: large;
 }
 .navbar-elements {
-    margin: 0;
-    position: absolute;
-    top: 20%;
-    left: 20%;
+  margin: 0;
+  position: absolute;
+  top: 20%;
+  left: 20%;
 }
 .navbar-elements li {
-    list-style-type: none;
-    font-size: 2rem;
-    line-height: 2.2;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
+  list-style-type: none;
+  font-size: 2rem;
+  line-height: 2.2;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }
 .navbar-elements a {
-    text-decoration: none;
-    color: var(--white);
+  text-decoration: none;
+  color: var(--white);
 }
 .navbar-elements a:hover {
-    color: var(--dark-gray);
+  color: var(--dark-gray);
 }
 nav.show {
   width: 30%;
@@ -120,179 +128,146 @@ nav.show {
 
 /* bouncing arrow styling for opening page */
 .section {
-    display: flex !important;
-    align-items: center !important; 
-    justify-content: center;
-    text-align: center;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center;
+  text-align: center;
 }
 
-.arrow{
-    font-size: 8vh;
-    position: absolute;
-    bottom: 8%;
-    left: 50%; 
+.arrow {
+  font-size: 8vh;
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
 }
-.bounce{
-    animation: bounce 2s infinite;
+.bounce {
+  animation: bounce 2s infinite;
 }
-@keyframes bounce{
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateX(-50%) translateY(0);
-    }
-    40% {
-        transform: translateX(-50%) translateY(-30px);
-    }
-    60% {
-        transform: translateX(-50%) translateY(-15px);
-    }
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-30px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-15px);
+  }
 }
 h1 {
-    font-size: 10rem;
+  font-size: 10rem;
 }
 
 img {
-    border-radius: 125px;
+  border-radius: 125px;
 }
 #name {
-    color: var(--dark-gray);
+  color: var(--dark-gray);
 }
 h2 {
-    font-size: 4rem;
+  font-size: 4rem;
 }
 #main-text {
-    display: flex;
-    flex-direction: column;  
-    max-width: 70vw;
+  display: flex;
+  flex-direction: column;
+  max-width: 70vw;
+}
+#main-content img {
+  width: 300px;
+  height: 250px;
 }
 
 /* styles my short description (below heading) */
 p {
-    color: white;
-    font-family: "Roboto", sans-serif;
-    font-size: 2rem;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
 }
 #aboutContent {
-    max-width: 70%;
-    position: relative;
-    left: 15%;
+  max-width: 70%;
+  position: relative;
+  left: 15%;
 }
 #aboutContent span {
-    color: var(--dark-gray);
+  color: var(--dark-gray);
 }
 
 footer {
-    position: fixed;
-    bottom: 1rem;
-    left: 1rem;
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
 }
 footer i {
-    font-size: 4rem;
-    color: var(--dark-gray)
+  font-size: 4rem;
+  color: var(--dark-gray);
 }
 footer i:hover {
-    color: var(--white);
-    transform: scale(1.2);
+  color: var(--white);
+  transform: scale(1.2);
 }
 
 /* styling for phones */
 @media (max-width: 600px) {
-    #light {
-        max-width: 1rem;
-        max-height: 1rem;
-    }
-    
-    #dark {
-        max-width: 1rem;
-        max-height: 1rem;
-    }
-
-    .checkbox-label {
-        margin: 0.5rem;
-        margin-top: 1rem;
-    }
-
-    body.light label[for="menu"] span {
-        background-color: var(--dark-gray);
-    }
-
-    nav {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .navbar-elements {
-        display: none; /* Hide navbar */
-        flex-direction: column;
-        position: absolute; /* won't move anything around it */
-        background-color: var(--dark-gray);
-        width: 50dvw;
-        height: 50dvh;
-        border-radius: 10px;
-        margin-top: 4rem;
-    }
-
-    .navbar-elements a {
-        color: var(--white);
-    }
-
-    /* Show the hamburger icon */
-    label[for="menu"] {
-        display: flex;
-    }
-
-    /* Show menu when hamburger is clicked on */
-    #menu:checked ~ .navbar-elements {
-        display: flex;
-    }
-
-    #main-content {
-        flex-direction: column;
-    }
-
-    img {
-        width: 200px;
-        height: 300px;
-        margin-left: 0;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    p {
-        font-size: 1rem;
-    }
-
-    footer {
-        bottom: 1rem;
-    }
-
-    footer img {
-        width: 7vw;
-    }
-
-    h2 {
-        font-size: 2.5rem;
-    }
-
-    address a {
-        font-size: 1rem;
-    }
+  .hamburger {
+    height: 40px;
+    width: 40px;
+    left: 6%;
+  }
+  .icon1,
+  .icon2,
+  .icon3 {
+    left: 22.5%;
+    width: 1.5rem;
+  }
+  .navbar-elements a {
+    color: var(--dark-gray);
+  }
+  .navbar-elements {
+    top: 25%;
+    left: 0%;
+  }
+  nav.show {
+    width: 100%;
+    opacity: 1;
+  }
+  h1 {
+    font-size: 6rem;
+  }
+  footer i {
+    font-size: 3rem;
+  }
+  .arrow {
+    bottom: 25%;
+  }
+  #main-text {
+    max-width: 100vw;
+  }
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+  #main-content img {
+    width: 200px;
+    height: 300px;
+  }
 }
-
 
 /* styling for larger screens (eg. ipads) */
 @media (min-width: 901px) and (max-width: 1100px) {
-    .navber-elements {
-        font-size: 1rem;
-    }
-    
-    footer {
-        bottom: 2.5rem;
-    }
+  .navber-elements {
+    font-size: 1rem;
+  }
 
-    footer img {
-        width: 5dvw;
-        height: 4dvh;
-    }
+  footer {
+    bottom: 2.5rem;
+  }
+
+  footer img {
+    width: 5dvw;
+    height: 4dvh;
+  }
 }

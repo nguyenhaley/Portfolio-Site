@@ -1,60 +1,68 @@
 :root {
-    --white: #ffffff;
-    --dark-gray: #3d3d3d;
-    --light-gray: #D3D3D3;
-    --light-purple: #a980f3;
+  --white: #ffffff;
+  --dark-gray: #3d3d3d;
+  --light-gray: #d3d3d3;
+  --light-purple: #a980f3;
 }
 
 /* pulled from this site: https://animated-gradient-background-generator.netlify.app/ */
 .gradient {
-    background: linear-gradient(211deg,var(--white),var(--light-purple),#9cdbf5,#a2a5a7);
-    background-size: 240% 240%;
-    animation: gradient-animation 18s ease infinite;
+  background: linear-gradient(
+    211deg,
+    var(--white),
+    var(--light-purple),
+    #9cdbf5,
+    #a2a5a7
+  );
+  background-size: 240% 240%;
+  animation: gradient-animation 18s ease infinite;
 }
 @keyframes gradient-animation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @keyframes fadeOutAnimation {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 body {
-    font-family: "Inter", sans-serif;
-    overflow: hidden;
-    color: var(--white);
-    position: relative;
-    height: 100vh;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+  color: var(--white);
+  position: relative;
+  height: 100vh;
 }
 
 /* styling for hamburger navbar */
-.icon1, .icon2, .icon3 {
-    position: absolute;
-    left: 25%;
-    top: 50%;
-    width: 2rem;
-    height: 0.12rem;
-    background-color: var(--white);
+.icon1,
+.icon2,
+.icon3 {
+  position: absolute;
+  left: 25%;
+  top: 50%;
+  width: 2rem;
+  height: 0.12rem;
+  background-color: var(--white);
 }
 .icon1 {
   transform: translateY(-8px);
@@ -63,50 +71,50 @@ body {
   transform: translateY(8px);
 }
 .hamburger {
-    position: absolute;
-    height: 60px;
-    width: 60px;
-    top: 4%;
-    left: 2%;
-    z-index: 1000;
-    border-radius: 50%;
-    background: var(--dark-gray);
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  top: 4%;
+  left: 2%;
+  z-index: 1000;
+  border-radius: 50%;
+  background: var(--dark-gray);
 }
 .hamburger:hover {
   transform: scale(1.2);
 }
 nav {
-    background: var(--light-gray);
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 0%;
-    z-index: 10;
-    opacity: 0;
-    transition: all 600ms cubic-bezier(.62, .04, .3, 1.56);
-    transition-delay: 100ms;
-    font-size: large;
+  background: var(--light-gray);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 0%;
+  z-index: 10;
+  opacity: 0;
+  transition: all 600ms cubic-bezier(0.62, 0.04, 0.3, 1.56);
+  transition-delay: 100ms;
+  font-size: large;
 }
 .navbar-elements {
-    margin: 0;
-    position: absolute;
-    top: 20%;
-    left: 20%;
+  margin: 0;
+  position: absolute;
+  top: 20%;
+  left: 20%;
 }
 .navbar-elements li {
-    list-style-type: none;
-    font-size: 2rem;
-    line-height: 2.2;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
+  list-style-type: none;
+  font-size: 2rem;
+  line-height: 2.2;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }
 .navbar-elements a {
-    text-decoration: none;
-    color: var(--white);
+  text-decoration: none;
+  color: var(--white);
 }
 .navbar-elements a:hover {
-    color: var(--dark-gray);
+  color: var(--dark-gray);
 }
 nav.show {
   width: 30%;
@@ -116,276 +124,266 @@ nav.show {
 /* old styling */
 
 hgroup {
-    padding-left: 1rem;
-    margin-top: 12vh !important;
+  padding-left: 1rem;
+  margin-top: 12vh !important;
 }
 
 h1 {
-    color: white;
-    font-size: 2rem;
-    margin-bottom: 0;
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 0;
 }
 
 h3 {
-    padding-left: 1rem;
-    text-decoration: underline;
-    font-size: 2rem;
-    margin-top: 15vh;
+  padding-left: 1rem;
+  text-decoration: underline;
+  font-size: 2rem;
+  margin-top: 15vh;
 }
 
 h4 {
-    font-size: 1.5rem;
-    margin-top: 0;
+  font-size: 1.5rem;
+  margin-top: 0;
 }
 
 p {
-    margin-top: 0.5em;
+  margin-top: 0.5em;
 }
 
 #summary {
-    font-family: "Roboto Flex", sans-serif;
-}
-
-/* when users scroll down, they'll scroll between content */
-#scroll-container {
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 100vh;
-    margin-top: -1%;
+  font-family: "Roboto Flex", sans-serif;
 }
 
 .section hgroup {
-    padding-left: 1rem;
-    text-align: left;
-    display: block;
-    align-self: flex-start;
-    margin-top: 1rem;
+  padding-left: 1rem;
+  text-align: left;
+  display: block;
+  align-self: flex-start;
+  margin-top: 1rem;
 }
 
 .section {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  height: 100vh;
 }
 
 #firstPage {
-    align-items: center !important;
+  align-items: center !important;
 }
 
 #current-classes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-content: center;
-    gap: 12rem;
-    margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: center;
+  gap: 12rem;
+  margin-top: 2rem;
 }
 
 class-card {
-    background-color: #a2a5a7;
-    height: 35vh;
-    width: 20vw;
-    border-radius: 2rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+  background-color: #a2a5a7;
+  height: 35vh;
+  width: 20vw;
+  border-radius: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 #courses {
-    margin-top: 3rem;
+  margin-top: 3rem;
 }
 
 .courseDetails {
-    color: white;
-    font-family: "Roboto Flex", sans-serif;
+  color: white;
+  font-family: "Roboto Flex", sans-serif;
 }
 
 #secondPage {
-    margin-top: 5rem;
+  margin-top: 5rem;
 }
 
 #currentReads {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-left: 1rem;
-    padding-right: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 #bookDetails {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
 }
 
 #right-side {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1.5rem;
 }
 
 #right-side a {
-    display: inline-block;
-    background-color: #3d3d3d;
-    padding: 1rem;
-    color:white;
-    border-radius: 1em;
-    align-self: center;
-    text-decoration: none;
-    font-family: "Roboto Flex", sans-serif;
+  display: inline-block;
+  background-color: #3d3d3d;
+  padding: 1rem;
+  color: white;
+  border-radius: 1em;
+  align-self: center;
+  text-decoration: none;
+  font-family: "Roboto Flex", sans-serif;
 }
 
 #right-side a:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 /* styling for phones */
 @media (max-width: 600px) {
-    #light {
-        max-width: 1rem;
-        max-height: 1rem;
-    }
-    
-    #dark {
-        max-width: 1rem;
-        max-height: 1rem;
-    }
-    
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+  #light {
+    max-width: 1rem;
+    max-height: 1rem;
+  }
 
-    .navbar-elements {
-        display: none; /* Hide navbar */
-        flex-direction: column;
-        position: absolute; /* won't move anything around it */
-        background-color: #3d3d3d;
-        width: 50dvw;
-        height: 50dvh;
-        border-radius: 10px;
-        font-size: 1.5rem;
-        margin-top: 62vh;
-    }
+  #dark {
+    max-width: 1rem;
+    max-height: 1rem;
+  }
 
-    .navbar-elements a {
-        color: white;
-    }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    /* Show the hamburger icon */
-    label[for="menu"] {
-        display: flex;
-        margin-top: 3dvh;
-        margin-left: 2dvh;
-    }
+  .navbar-elements {
+    display: none; /* Hide navbar */
+    flex-direction: column;
+    position: absolute; /* won't move anything around it */
+    background-color: #3d3d3d;
+    width: 50dvw;
+    height: 50dvh;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    margin-top: 62vh;
+  }
 
-    body.light label[for="menu"] span {
-        background-color: #3d3d3d;
-    }
+  .navbar-elements a {
+    color: white;
+  }
 
-    /* Show menu when hamburger is clicked on */
-    #menu:checked ~ .navbar-elements {
-        display: flex;
-    }
+  /* Show the hamburger icon */
+  label[for="menu"] {
+    display: flex;
+    margin-top: 3dvh;
+    margin-left: 2dvh;
+  }
 
-    hgroup {
-        text-align: center;
-        padding-left: 0;
-        margin-top: 2rem;
-    }
+  body.light label[for="menu"] span {
+    background-color: #3d3d3d;
+  }
 
-    h3 {
-        font-size: 1rem;
-        margin-top: 2vh !important;
-        padding-left: 0;
-    }
+  /* Show menu when hamburger is clicked on */
+  #menu:checked ~ .navbar-elements {
+    display: flex;
+  }
 
-    #current-classes {
-        margin-top: 0;
-        flex-direction: column;
-        gap: 1rem;
-    }
+  hgroup {
+    text-align: center;
+    padding-left: 0;
+    margin-top: 2rem;
+  }
 
-    class-card {
-        width: 90vw;
-        height: 20vh;
-    }
+  h3 {
+    font-size: 1rem;
+    margin-top: 2vh !important;
+    padding-left: 0;
+  }
 
-    #secondPage {
-        flex-direction: column;
-    }
+  #current-classes {
+    margin-top: 0;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-    #bookDetails {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+  class-card {
+    width: 90vw;
+    height: 20vh;
+  }
 
-    #bookDetails img {
-        width:40vw;
-        height: 30vh;
-    }
+  #secondPage {
+    flex-direction: column;
+  }
 
-    h4 {
-        font-size: 0.75rem;
-    }
+  #bookDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-    #left-side {
-        text-align: center;
-    }
+  #bookDetails img {
+    width: 40vw;
+    height: 30vh;
+  }
 
-    #right-side {
-        font-size: 0.75rem;
-    }
+  h4 {
+    font-size: 0.75rem;
+  }
 
-    #right-side a {
-        text-align: center;
-    }
+  #left-side {
+    text-align: center;
+  }
 
-    h1 {
-        font-size: 1.5rem;
-    }
+  #right-side {
+    font-size: 0.75rem;
+  }
 
-    p {
-        font-size: 1rem;
-        margin-top: 0;
-        margin-bottom: -1rem;
-    }
+  #right-side a {
+    text-align: center;
+  }
 
-    #secondPage {
-        margin-top: 100vh;
-    }
+  h1 {
+    font-size: 1.5rem;
+  }
 
-    #secondPage h3 {
-        margin-top: 2vh !important;
-    }
+  p {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: -1rem;
+  }
 
-    #book-cover {
-        margin-bottom: -1rem;
-    }
+  #secondPage {
+    margin-top: 100vh;
+  }
 
+  #secondPage h3 {
+    margin-top: 2vh !important;
+  }
+
+  #book-cover {
+    margin-bottom: -1rem;
+  }
 }
 
 @media (max-width: 1100px) and (min-width: 601px) {
-    class-card {
-        width: 30vw;
-        height: 20vh;
-    }
+  class-card {
+    width: 30vw;
+    height: 20vh;
+  }
 
-    h3 {
-        margin-top: 20%;
-    }
+  h3 {
+    margin-top: 20%;
+  }
 
-    .navber-elements {
-        font-size: 1rem;
-    }
+  .navber-elements {
+    font-size: 1rem;
+  }
 }
-

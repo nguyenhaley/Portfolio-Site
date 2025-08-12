@@ -1,141 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta name="description" content="Peek into my life page for portfolio">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Life Page </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet" href="lifePage.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/b4caeb551b.js" crossorigin="anonymous"></script>
-</head>
-<body class="gradient">
-
+  <head>
+    <meta name="description" content="Peek into my life page for portfolio" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="lifePage.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/b4caeb551b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="gradient">
     <header>
-        <!-- pulled animation from this codepen: https://codepen.io/pranjal9599/pen/yJRNoL -->
-        <div class="hamburger" id="icon">
-            <div class="icon1" id="a"></div>
-            <div class="icon2" id="b"></div>
-            <div class="icon3" id="c"></div>
-            <div class="empty"></div>
-        </div>
+      <!-- pulled animation from this codepen: https://codepen.io/pranjal9599/pen/yJRNoL -->
+      <div class="hamburger" id="icon">
+        <div class="icon1" id="a"></div>
+        <div class="icon2" id="b"></div>
+        <div class="icon3" id="c"></div>
+        <div class="empty"></div>
+      </div>
 
-        <nav id="navbar">
-            <ul class="navbar-elements">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="resumePage.html">Resume</a></li>
-                <li><a href="experiencePage.html">Experience</a></li>
-                <li><a href="projectsPage.html">Projects</a></li>
-                <li><a href="lifePage.html">Peek into my life!</a></li>
-            </ul>
-        </nav>
+      <nav id="navbar">
+        <ul class="navbar-elements">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="resumePage.html">Resume</a></li>
+          <li><a href="experiencePage.html">Experience</a></li>
+          <li><a href="projectsPage.html">Projects</a></li>
+          <li><a href="lifePage.html">Peek into my life!</a></li>
+        </ul>
+      </nav>
 
-        <script>
-            var icon = document.getElementById("icon");
-            var icon1 = document.getElementById("a");
-            var icon2 = document.getElementById("b");
-            var icon3 = document.getElementById("c");
-            var navbar = document.getElementById('navbar');
-            var inner = document.getElementById("inner");
-
-            icon.addEventListener('click', function() {
-                icon1.classList.toggle('a');
-                icon2.classList.toggle('c');
-                icon3.classList.toggle('b');
-                navbar.classList.toggle('show');
-            });
-        </script>
-
-        <noscript>
-            <p> Javascript is disabled on this page. Your mode preference will not be saved! </p>
-        </noscript>
+      <noscript>
+        <p>
+          Javascript is disabled on this page. Your mode preference will not be
+          saved!
+        </p>
+      </noscript>
     </header>
 
+    <div id="fullpage">
+      <div class="section" id="firstPage">
+        <hgroup>
+          <h1>Take a peek into my current life!</h1>
+          <p>Last updated: February 2, 2025</p>
+        </hgroup>
 
-    <div id="scroll-container">
-        <div class="hidden section" id="firstPage"> 
-            <hgroup>
-                <h1>Take a peek into my current life!</h1>
-                <p>Last updated: February 2, 2025</p>
-            </hgroup>
+        <h3 id="courses">Courses I am currently taking:</h3>
+        <section id="current-classes">
+          <class-card>
+            <div class="courseName">
+              CSE134B: <span> Web Client Languages</span>
+            </div>
+            <div class="courseDetails">
+              Design and implementation of interactive World Wide Web clients
+              using helper applications and plug-ins. The main language covered
+              will be Java.
+            </div>
+          </class-card>
 
-            <h3 id="courses">Courses I am currently taking:</h3>
-            <section id="current-classes">
-                <class-card>
-                    <div class="courseName"> CSE134B: <span> Web Client Languages</span></div>
-                    <div class="courseDetails">
-                        Design and implementation of interactive World Wide Web clients using helper applications and plug-ins.
-                        The main language covered will be Java.
-                    </div>
-                </class-card>
+          <class-card>
+            <div class="courseName">
+              COGS101B: <span> Cyborgs Now and in the Future </span>
+            </div>
+            <div class="courseDetails">
+              A survey of the experimental study of learning, memory, and
+              attention. Topics include conditioning, automaticity, divided
+              attention, memory systems, and the nature of mental
+              representation.
+            </div>
+          </class-card>
 
-                <class-card>
-                    <div class="courseName"> COGS101B: <span> Cyborgs Now and in the Future </span></div>
-                    <div class="courseDetails">
-                        A survey of the experimental study of learning, memory, and attention. Topics include 
-                        conditioning, automaticity, divided attention, memory systems, and the nature of mental representation.
-                    </div>
-                </class-card>
+          <class-card>
+            <div class="courseName">
+              COGS100: <span> Learning, Memory, and Attention </span>
+            </div>
+            <div class="courseDetails">
+              Covers the theories of situated, distributed, enactive, and
+              embodied cognition. Explains how cyborgs are a natural consequence
+              of our current understanding of embodied minds embedded in
+              culturally shaped niches; how mental systems can be distributed
+              over other people and things.
+            </div>
+          </class-card>
+        </section>
+      </div>
 
-                <class-card>
-                    <div class="courseName"> COGS100: <span> Learning, Memory, and Attention </span></div>
-                    <div class="courseDetails">
-                        Covers the theories of situated, distributed, enactive, and embodied cognition. 
-                        Explains how cyborgs are a natural consequence of our current understanding of 
-                        embodied minds embedded in culturally shaped niches; how mental systems can be 
-                        distributed over other people and things.
-                    </div>
-                </class-card>
-            </section>
-        </div>
+      <div class="section" id="secondPage">
+        <h3 id="current-book">Book that I am currently reading:</h3>
+        <section id="currentReads">
+          <div id="bookDetails">
+            <div id="left-side">
+              <h4>Mistborn <span>by Brandon Sanderson</span></h4>
+              <!-- Image was taken from amazon website -->
+              <img
+                id="book-cover"
+                src="https://m.media-amazon.com/images/I/91U6rc7u0yL.jpg"
+                alt="mistborn book cover"
+                height="400"
+                width="300"
+              />
+            </div>
 
-        <div class="hidden section" id="secondPage"> 
-            <h3 id="current-book">Book that I am currently reading: </h3>
-            <section id="currentReads">
-                <div id="bookDetails">
-                    <div id="left-side">
-                        <h4>Mistborn <span>by Brandon Sanderson</span> </h4>
-                        <!-- Image was taken from amazon website -->
-                        <img id="book-cover" src="https://m.media-amazon.com/images/I/91U6rc7u0yL.jpg" alt="mistborn book cover" height="400" width="300">
-                    </div>
+            <div id="right-side">
+              <p>
+                Summary: <br />
+                <span id="summary">
+                  Once, a hero arose to save the world. He failed. Ever since,
+                  the world has been a wasteland of ash and mist controlled by
+                  the immortal emperor known as the Lord Ruler. But hope
+                  survives. A new uprising is forming, one built around the
+                  ultimate caper, the cunning of a brilliant criminal
+                  mastermind, and the determination of an unlikely heroine: a
+                  street urchin who must learn to master the power of a
+                  Mistborn.
+                </span>
+              </p>
 
-                    <div id="right-side">
+              <a
+                href="https://www.goodreads.com/user/show/147553005-haley-nguyen"
+              >
+                Check out my Goodreads!
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
 
-                        <p>
-                            Summary: <br> <span id="summary"> Once, a hero arose to save the world. He failed. Ever since, the world has been a wasteland of ash 
-                            and mist controlled by the immortal emperor known as the Lord Ruler. But hope survives. A new uprising is forming,
-                            one built around the ultimate caper, the cunning of a brilliant criminal mastermind, and the determination of an 
-                            unlikely heroine: a street urchin who must learn to master the power of a Mistborn. </span>
-                        </p>    
-                       
-                        <a href="https://www.goodreads.com/user/show/147553005-haley-nguyen">
-                            Check out my Goodreads!
-                        </a>
-                    </div>
-                    
-                </div>
-
-            </section>
-        </div>
-
-        <script>
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if(entry.isIntersecting){
-                        entry.target.classList.add('show');
-                    }
-                    else {
-                        entry.target.classList.remove('show');
-                    }
-                });
-            });
-
-            const hiddenElements = document.querySelectorAll(".hidden");
-            hiddenElements.forEach((element) => observer.observe(element));
-        </script>
-
-    </div>  
-</body>
+      <!-- jQuery (required for fullPage.js v2) -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <!-- fullPage.js -->
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.jsdelivr.net/npm/fullpage.js/dist/fullpage.min.css"
+      />
+      <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/fullpage.js/dist/fullpage.min.js"
+      ></script>
+      <!-- Your JavaScript file -->
+      <script src="lifePage.js"></script>
+    </div>
+  </body>
 </html>
