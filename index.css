@@ -178,7 +178,7 @@ h2 {
 }
 #main-content img {
   width: 300px;
-  height: 250px;
+  height: 425px;
 }
 
 /* styles my short description (below heading) */
@@ -195,7 +195,6 @@ p {
 #aboutContent span {
   color: var(--dark-gray);
 }
-
 footer {
   position: fixed;
   bottom: 1rem;
@@ -234,6 +233,8 @@ footer i:hover {
     width: 100%;
     opacity: 1;
   }
+
+  /* styling outside of navbar */
   h1 {
     font-size: 6rem;
   }
@@ -253,6 +254,12 @@ footer i:hover {
   #main-content img {
     width: 200px;
     height: 300px;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  p {
+    font-size: 1.15rem;
   }
 }
 

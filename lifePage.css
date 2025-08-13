@@ -77,7 +77,7 @@ body {
   top: 4%;
   left: 2%;
   z-index: 1000;
-  border-radius: 50%;
+  border-radius: 35%;
   background: var(--dark-gray);
 }
 .hamburger:hover {
@@ -247,53 +247,30 @@ class-card {
 
 /* styling for phones */
 @media (max-width: 600px) {
-  #light {
-    max-width: 1rem;
-    max-height: 1rem;
+  .hamburger {
+    height: 40px;
+    width: 40px;
+    left: 6%;
   }
-
-  #dark {
-    max-width: 1rem;
-    max-height: 1rem;
+  .icon1,
+  .icon2,
+  .icon3 {
+    left: 22.5%;
+    width: 1.5rem;
   }
-
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .navbar-elements {
-    display: none; /* Hide navbar */
-    flex-direction: column;
-    position: absolute; /* won't move anything around it */
-    background-color: #3d3d3d;
-    width: 50dvw;
-    height: 50dvh;
-    border-radius: 10px;
-    font-size: 1.5rem;
-    margin-top: 62vh;
-  }
-
   .navbar-elements a {
-    color: white;
+    color: var(--dark-gray);
+  }
+  .navbar-elements {
+    top: 25%;
+    left: 0%;
+  }
+  nav.show {
+    width: 100%;
+    opacity: 1;
   }
 
-  /* Show the hamburger icon */
-  label[for="menu"] {
-    display: flex;
-    margin-top: 3dvh;
-    margin-left: 2dvh;
-  }
-
-  body.light label[for="menu"] span {
-    background-color: #3d3d3d;
-  }
-
-  /* Show menu when hamburger is clicked on */
-  #menu:checked ~ .navbar-elements {
-    display: flex;
-  }
+  /* styling outside of navbar */
 
   hgroup {
     text-align: center;

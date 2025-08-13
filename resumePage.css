@@ -1,44 +1,51 @@
 :root {
-    --white: #ffffff;
-    --dark-gray: #3d3d3d;
-    --light-gray: #D3D3D3;
-    --light-purple: #a980f3;
+  --white: #ffffff;
+  --dark-gray: #3d3d3d;
+  --light-gray: #d3d3d3;
+  --light-purple: #a980f3;
 }
 
 /* pulled from this site: https://animated-gradient-background-generator.netlify.app/ */
 .gradient {
-    background: linear-gradient(211deg,var(--white),var(--light-purple),#9cdbf5,#a2a5a7);
-    background-size: 240% 240%;
-    animation: gradient-animation 18s ease infinite;
+  background: linear-gradient(
+    211deg,
+    var(--white),
+    var(--light-purple),
+    #9cdbf5,
+    #a2a5a7
+  );
+  background-size: 240% 240%;
+  animation: gradient-animation 18s ease infinite;
 }
 @keyframes gradient-animation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-
 body {
-    font-family: "Inter", sans-serif;
-    overflow: hidden;
-    color: var(--white);
-    position: relative;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+  color: var(--white);
+  position: relative;
 }
 
 /* styling for hamburger navbar */
-.icon1, .icon2, .icon3 {
-    position: absolute;
-    left: 25%;
-    top: 50%;
-    width: 2rem;
-    height: 0.12rem;
-    background-color: var(--white);
+.icon1,
+.icon2,
+.icon3 {
+  position: absolute;
+  left: 25%;
+  top: 50%;
+  width: 2rem;
+  height: 0.12rem;
+  background-color: var(--white);
 }
 .icon1 {
   transform: translateY(-8px);
@@ -47,50 +54,50 @@ body {
   transform: translateY(8px);
 }
 .hamburger {
-    position: absolute;
-    height: 60px;
-    width: 60px;
-    top: 4%;
-    left: 2%;
-    z-index: 1000;
-    border-radius: 50%;
-    background: var(--dark-gray);
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  top: 4%;
+  left: 2%;
+  z-index: 1000;
+  border-radius: 35%;
+  background: var(--dark-gray);
 }
 .hamburger:hover {
   transform: scale(1.2);
 }
 nav {
-    background: var(--light-gray);
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 0%;
-    z-index: 10;
-    opacity: 0;
-    transition: all 600ms cubic-bezier(.62, .04, .3, 1.56);
-    transition-delay: 100ms;
-    font-size: large;
+  background: var(--light-gray);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 0%;
+  z-index: 10;
+  opacity: 0;
+  transition: all 600ms cubic-bezier(0.62, 0.04, 0.3, 1.56);
+  transition-delay: 100ms;
+  font-size: large;
 }
 .navbar-elements {
-    margin: 0;
-    position: absolute;
-    top: 20%;
-    left: 20%;
+  margin: 0;
+  position: absolute;
+  top: 20%;
+  left: 20%;
 }
 .navbar-elements li {
-    list-style-type: none;
-    font-size: 2rem;
-    line-height: 2.2;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
+  list-style-type: none;
+  font-size: 2rem;
+  line-height: 2.2;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }
 .navbar-elements a {
-    text-decoration: none;
-    color: var(--white);
+  text-decoration: none;
+  color: var(--white);
 }
 .navbar-elements a:hover {
-    color: var(--dark-gray);
+  color: var(--dark-gray);
 }
 nav.show {
   width: 30%;
@@ -99,113 +106,88 @@ nav.show {
 
 /* style for resume content */
 h1 {
-    text-align: center;
-    padding-top: 2rem;
-    margin-bottom: 2rem;
-    font-size: 3rem;
+  text-align: center;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+}
+
+#resume {
+  width: 60vw;
+  height: 75vh;
 }
 
 #resume-content {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
 }
 
 #resumeDownload {
-    display: inline-block;
-    text-decoration: none;
-    background-color: #3d3d3d;
-    padding: 1rem;
-    color:white;
-    border-radius: 1em;
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--dark-gray);
+  padding: 1rem;
+  color: white;
+  border-radius: 1em;
 }
 
 #resumeDownload:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 /* styling for phones */
 @media (max-width: 600px) {
-    #light {
-        max-width: 1rem;
-        max-height: 1rem;
-    }
-    
-    #dark {
-        max-width: 1rem;
-        max-height: 1rem;
-    }
+  .hamburger {
+    height: 40px;
+    width: 40px;
+    left: 6%;
+  }
+  .icon1,
+  .icon2,
+  .icon3 {
+    left: 22.5%;
+    width: 1.5rem;
+  }
+  .navbar-elements a {
+    color: var(--dark-gray);
+  }
+  .navbar-elements {
+    top: 25%;
+    left: 0%;
+  }
+  nav.show {
+    width: 100%;
+    opacity: 1;
+  }
 
-    .checkbox-label {
-        margin: 0.5rem;
-        margin-top: 1rem;
-    }
-
-    body.light label[for="menu"] span {
-        background-color: #3d3d3d;
-    }
-    
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .navbar-elements {
-        display: none; /* Hide navbar */
-        flex-direction: column;
-        position: absolute; /* won't move anything around it */
-        background-color: #3d3d3d;
-        width: 50dvw;
-        height: 50dvh;
-        border-radius: 10px;
-        font-size: 1.5rem;
-        margin-top: 62vh;
-    }
-
-    .navbar-elements a {
-        color: white;
-    }
-
-    /* Show the hamburger icon */
-    label[for="menu"] {
-        display: flex;
-    }
-
-    /* Show menu when hamburger is clicked on */
-    #menu:checked ~ .navbar-elements {
-        display: flex;
-    }
-
-    #resume-content {
-        flex-direction: column;
-    }
-
-    object {
-        width: 80% !important;
-        height: 60% !important;
-        object-fit: contain;
-    }
-
-    h1 {
-        margin-top: 1rem;
-    }
+  /* styling outside of navbar */
+  h1 {
+    font-size: 2rem;
+  }
+  #resume {
+    width: 80vw;
+    height: 70vh;
+  }
+  #resume-content {
+    flex-direction: column;
+  }
+  #resumeDownload {
+    height: 1vh;
+    width: 50vw;
+    text-align: center;
+    line-height: 0.5vh;
+  }
 }
 
 /* styling for larger screens (eg. ipad) */
 @media (min-width: 901px) and (max-width: 1100px) {
-    .navber-elements {
-        font-size: 1rem;
-    }
+  .navber-elements {
+    font-size: 1rem;
+  }
 
-    #resume-content {
-        margin-top: 3rem;
-    }
+  #resume-content {
+    margin-top: 3rem;
+  }
 }
-
-
-
-
-
-

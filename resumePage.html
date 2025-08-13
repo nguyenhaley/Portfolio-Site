@@ -1,66 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta name="description" content="Resume page for portfolio">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Resume Page </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet" href="resumePage.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/b4caeb551b.js" crossorigin="anonymous"></script>
-</head>
+  <head>
+    <meta name="description" content="Resume page for portfolio" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="resumePage.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/b4caeb551b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body class="gradient">
-    
+  <body class="gradient">
     <header>
-        <!-- pulled animation from this codepen: https://codepen.io/pranjal9599/pen/yJRNoL -->
-        <div class="hamburger" id="icon">
-            <div class="icon1" id="a"></div>
-            <div class="icon2" id="b"></div>
-            <div class="icon3" id="c"></div>
-            <div class="empty"></div>
-        </div>
+      <!-- pulled animation from this codepen: https://codepen.io/pranjal9599/pen/yJRNoL -->
+      <div class="hamburger" id="icon">
+        <div class="icon1" id="a"></div>
+        <div class="icon2" id="b"></div>
+        <div class="icon3" id="c"></div>
+        <div class="empty"></div>
+      </div>
 
-        <nav id="navbar">
-            <ul class="navbar-elements">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="resumePage.html">Resume</a></li>
-                <li><a href="experiencePage.html">Experience</a></li>
-                <li><a href="projectsPage.html">Projects</a></li>
-                <li><a href="lifePage.html">Peek into my life!</a></li>
-            </ul>
-        </nav>
+      <nav id="navbar">
+        <ul class="navbar-elements">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="resumePage.html">Resume</a></li>
+          <li><a href="experiencePage.html">Experience</a></li>
+          <li><a href="projectsPage.html">Projects</a></li>
+          <li><a href="lifePage.html">Peek into my life!</a></li>
+        </ul>
+      </nav>
 
-        <script>
-            var icon = document.getElementById("icon");
-            var icon1 = document.getElementById("a");
-            var icon2 = document.getElementById("b");
-            var icon3 = document.getElementById("c");
-            var navbar = document.getElementById('navbar');
-            var inner = document.getElementById("inner");
+      <script>
+        var icon = document.getElementById("icon");
+        var icon1 = document.getElementById("a");
+        var icon2 = document.getElementById("b");
+        var icon3 = document.getElementById("c");
+        var navbar = document.getElementById("navbar");
+        var inner = document.getElementById("inner");
 
-            icon.addEventListener('click', function() {
-                icon1.classList.toggle('a');
-                icon2.classList.toggle('c');
-                icon3.classList.toggle('b');
-                navbar.classList.toggle('show');
-            });
-        </script>
+        icon.addEventListener("click", function () {
+          icon1.classList.toggle("a");
+          icon2.classList.toggle("c");
+          icon3.classList.toggle("b");
+          navbar.classList.toggle("show");
+        });
+      </script>
 
-        <noscript>
-            <p> Javascript is disabled on this page. Your mode preference will not be saved! </p>
-        </noscript>
+      <noscript>
+        <p>
+          Javascript is disabled on this page. Your mode preference will not be
+          saved!
+        </p>
+      </noscript>
     </header>
 
-
-        <h1> Resume </h1>
-        <div id="resume-content">
-            <object id="resume" data= "./assets/currentResume.pdf" type="application/pdf" style="width:60vw; height: 75vh;"> </object>
-            <a href="./assets/currentResume.pdf" download id="resumeDownload"> Download Resume </a>
-        </div>
-
-
-</body>
+    <h1>Resume</h1>
+    <div id="resume-content">
+      <object
+        id="resume"
+        data="./assets/currentResume.pdf"
+        type="application/pdf"
+      ></object>
+      <a href="./assets/currentResume.pdf" download id="resumeDownload">
+        Download Resume
+      </a>
+    </div>
+  </body>
 </html>
